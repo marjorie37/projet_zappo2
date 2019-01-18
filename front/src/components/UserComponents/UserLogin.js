@@ -47,8 +47,8 @@ class UserLogin extends Component {
   }
 
   render() {
-    const { classes, prevPath, history } = this.props;
-    const { showPassword, formType, title, message } = this.state;
+    const { prevPath, history } = this.props;
+    const { formType, title, message } = this.state;
 
     return (
       <AccountForm

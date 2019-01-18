@@ -62,6 +62,20 @@ class AccountForm extends Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.onSubmit({
+      userName: this.state.userName,
+      userEmail: this.state.userEmail,
+      userPhone: this.state.userPhone,
+      userPassword: this.state.userPassword,
+      inputConfirmPassword: this.state.inputConfirmPassword
+    });
+    if (this.props.formType === "signin") {
+      this.props.redirectTo();
+    }
+  }
+
   goToCreate() {
     this.props.history.push("/identification/creation", {
       url: this.props.prevPath
@@ -87,6 +101,8 @@ class AccountForm extends Component {
       inputConfirmPassword,
       touched
     } = this.state;
+
+    console.log(this.props.redirectTo());
 
     // validations part of the component. With a condition named "noValidate" so we have different
     // validators for the login and signin parts
@@ -174,19 +190,7 @@ class AccountForm extends Component {
               <form
                 onChange={e => this.handleChange(e)}
                 onBlur={onBlurCheck}
-                onSubmit={e => {
-                  e.preventDefault();
-                  onSubmit({
-                    userName: this.state.userName,
-                    userEmail: this.state.userEmail,
-                    userPhone: this.state.userPhone,
-                    userPassword: this.state.userPassword,
-                    inputConfirmPassword: this.state.inputConfirmPassword
-                  });
-                  if (this.props.formType === "signin") {
-                    this.props.redirectTo();
-                  }
-                }}
+                onSubmit={e => this.handleSubmit(e)}
               >
                 <Typography variant="subheading" color="primary" align="center">
                   {title}
@@ -342,7 +346,6 @@ class AccountForm extends Component {
                       fullWidth={true}
                       className={classes.button}
                       onClick={() => this.goToCreate()}
-                      disabled={noValidate}
                     >
                       Créer un compte
                     </Button>

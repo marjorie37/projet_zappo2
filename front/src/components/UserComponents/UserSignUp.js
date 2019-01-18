@@ -54,7 +54,7 @@ class User extends Component {
   }
 
   render() {
-    const { prevPath, history, userName } = this.props;
+    const { prevPath, history } = this.props;
     const { formType, message, title } = this.state;
     return (
       <AccountForm
