@@ -1,0 +1,32 @@
+doctype html
+html(lang='fr')
+  head
+    title BackOffice Zappo
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet')
+    link(rel="stylesheet", href="/stylesheets/main.css")
+    link(rel="stylesheet", href="/stylesheets/zappoMain.css")
+    link(href='/stylesheets/messageFlash.css', rel='stylesheet')
+  body.backgroundCarreZappo
+    .container
+        .row.justify-content-center
+            .col-md-5
+                .d-flex.justify-content-center
+                    img.tailleMax.mb-4.mt-5(src="/images/logoZappo.png", alt="logo zappo")
+                form.mt-5(method="POST", action=`/admin`)
+                    .form-group
+                        label.h6(for='renseignerEmail') Identifiant
+                        input(class="form-control",name="name",type="text",id="renseignerEmail", placeholder="Votre email",required="required")
+                    .form-group
+                        label.h6(for='renseignerPassword') Mot de passe
+                        input(class="form-control",name="password",id="renseignerPassword",type="password",placeholder="",required)
+                    .row.justify-content-end
+                        .col.text-right
+                            a(href='#') Mot de passe oublié
+
+                    .row.justify-content-md-center.mt-4.btnConnexionStaffDiv 
+                        button.justify-content-center.btn-block.btn.navBarXs.blancZappoCl(type="submit") Connexion
+        

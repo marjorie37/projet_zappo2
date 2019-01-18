@@ -1,0 +1,128 @@
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+body#ordersList {
+  font-size: 20px;
+}
+
+body#ordersList .nav-link {
+
+  color: #000;
+}
+
+#menuBack a:hover{
+  color:inherit;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+
+.underline {
+  text-decoration: underline;
+}
+/* #pendingOrdersTab.nav-item.nav-link:active {
+background-color : rgb(44, 61, 78) !important;
+} */
+/*
+   * class Utilities
+   */
+
+.VHFullHeight {
+  min-height: 100vh;
+}
+
+.sticky{
+  position: sticky;
+  top:0;
+}
+
+.mt-6{
+  margin-top: 90px;
+}
+
+.backgroundCarreZappo {
+  background-image: url(../images/background.gif);
+}
+
+.logoZappo {
+  background-image: url(../images/logoZappo.png);
+}
+
+.btnConnexionStaffDiv {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+
+
+.border-top{
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.tailleMax {
+  max-width: 100%;
+}
+
+.tailleMini {
+  max-width: 30%;
+}
+
+.iconMenu {
+  color: rgb(193, 56, 50) !important;
+}
+
+.iconMenu:hover {
+  color: #fff !important;
+}
+
+.navBarXs {
+  background-color: rgb(44, 61, 78) !important;
+}
+
+.btnNavBarXs {
+  position: relative;
+  left: 42%;
+}
+
+.smallZindex {
+  z-index: -100 !important;
+}
+
+.logoZappoMenuMobile {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+
+.ficheDashboard {
+  background-color: rgb(44, 61, 78, 1);
+}
+
+.textCardBlue {
+  color: #009ee0;
+}
+
+.textCardRed {
+  color: #c0392b;
+}
+
+.textCardNavy {
+  color: rgb(75, 125, 175);
+}
+
+.textCardGreen {
+  color: rgb(5, 134, 48);
+}
+.bg-cardDash {
+  background-color: #ecf0f1;
+}
+.bg-cardDash h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}

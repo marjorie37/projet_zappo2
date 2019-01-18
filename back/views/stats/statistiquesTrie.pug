@@ -1,0 +1,102 @@
+extends ../layout
+block css
+    link(rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.2.1/dt-1.10.16/af-2.2.2/r-2.2.1/datatables.min.css")
+
+
+block content
+    .col
+        .row
+          h1.bleuZappoCl.mb-4
+            i.mr-3.fas.fa-chart-line
+            span.text-center Statistiques
+        hr.borderBleuZappo
+        .row.mb-5.justify-content-center.d-flex.align-items-center
+            h2.bleuZappoCl Sélectionner une méthode de tri
+        .row.justify-content-center
+            .col-5
+                h3.text-center.bleuZappoCl Trier par jour
+            .col-1
+                h3.text-center.bleuZappoCl ou
+            .col-5
+                h3.text-center.bleuZappoCl Trier par mois
+        .row.mt-5.mb-5.justify-content-center.d-flex.align-items-center.bg-light
+            .col-6.border-right.border-dark
+                form.p-3(method="POST", action=`/admin/statistiques`)
+                    .form-group
+                        label(for="lookingForDaytwo") Rechercher par jour
+                        #datetimepicker9.input-group.date(data-target-input='nearest')
+                            input#lookingForDaytwo.form-control.datetimepicker-input(type='text', data-target='#datetimepicker9', name="target_day" value=date)
+                            .input-group-append(data-target='#datetimepicker9', data-toggle='datetimepicker')
+                                .input-group-text
+                                    i.far.fa-calendar-alt
+                    button.btn.btnZappoBleu Valider
+            .col-6
+                form.p-3(method="POST", action=`/admin/statistiques/mois`)
+                    .form-group
+                        label(for='triParMois') Choisir un mois
+                        select#triParMois(name="mounth", required="required").form-control
+                            option(value="01") Janvier
+                            option(value="02") Février
+                            option(value="03") Mars
+                            option(value="04") Avril
+                            option(value="05") Mai
+                            option(value="06") Juin
+                            option(value="07") Juillet
+                            option(value="08") Août
+                            option(value="09") Septembre
+                            option(value="10") Octobre
+                            option(value="11") Novembre
+                            option(value="12") Décembre
+                    label(for='triParAn') Choisir une année
+                    select#triParAn(name="mounth", required="required").form-control
+                        each an in annee
+                            option(value=an)=an
+                    button.mt-3.btn.btnZappoBleu Valider
+        hr.borderBleuZappo
+        .row.mt-4.mb-4.justify-content-center
+            h2.bleuZappoCl=`Ventes du ${datePresentation}`
+        .row
+            .table-responsive
+                table#statistics.table.table-striped
+                    thead.bleuZappoBg
+                        tr
+                            th.text-light.text-center(scope='col') Produit
+                            th.text-light.text-center(scope='col') Catégorie
+                            th.text-light.text-center(scope='col') Date
+                            th.text-light.text-center(scope='col') Nom client
+                            th.text-light.text-center(scope='col') Prix HT
+                            th.text-light.text-center(scope='col') Taux TVA
+                            th.text-light.text-center(scope='col') TVA
+                            th.text-light.text-center(scope='col') Prix TTC
+                    tbody
+                        each stat in filterByDay
+                            each product in stat.cart
+                                if stat.cart !== null
+                                    tr
+                                        td= product.name
+                                        if product.category_id === 1
+                                            td.text-center Pizze  
+                                        else if product.category_id === 2
+                                            td.text-center Entrées
+                                        else if product.category_id === 3
+                                            td.text-center Desserts
+                                        else if product.category_id === 4
+                                            td.text-center Boissons
+                                        else if product.category_id === 5
+                                            td.text-center Bambino
+                                        td.text-center=stat.validation_time
+                                        td.text-center=stat.user.name
+                                        td.text-center=`${product.ht_price} €`
+                                        td.text-center=`${product.tva} %`
+                                        td.text-center=`${(((product.ht_price * (1+ product.tva / 100)).toFixed(2))-product.ht_price).toFixed(2)} €`
+                                        td.text-center=`${(product.ht_price * (1+ product.tva / 100)).toFixed(2)} €`
+
+    block javascripts
+        script(type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.2.1/dt-1.10.16/af-2.2.2/r-2.2.1/datatables.min.js")
+        script(src="/js/stats.js")
+        script(src='/js/dateTimePicker.js')
+                                        
+                                
+                                        
+
+                                         

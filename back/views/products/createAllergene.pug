@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    .col
+        .row.justify-content-between.mb-4
+            h1.bleuZappoCl
+                i.mr-3.far.fa-edit
+                span.text-center Creation d'allergènes
+        .row.justify-content-center.mt-5
+            .col-lg-8.bg-light.boxShadowB
+                .row.justify-content-center
+                    .col-sm-8
+                    .row.mb-5.mt-4.justify-content-center
+                        h3.text-muted.text-center 
+                    form(method="POST", action=`/admin/produits/addallergene`)
+                        .col
+                            .row.justify-content-center
+                            .form-group
+                                label(for='name') Nom
+                                input#name.form-control(name="name",required="required" type='text', aria-describedby='nameAllergeneHelp')
+                                small#nameAllergeneHelp.form-text Nom de l'allergene
+                            .row.justify-content-center
+                                button.btn.btnZappoBleu.mb-3.mt-2 Créer l'allergene

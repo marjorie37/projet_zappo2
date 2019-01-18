@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zappo - Votre panier de pizzas à emporter</title>
+    <!-- Shared CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <!-- CSS FOR PAGES -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/julien.css" />
+    <!-- <script src="main.js"></script> -->
+
+</head>
+
+<body id="shoppingCartPage">
+    <div class="container">
+        <section class='fixed-top container-fluid p-0'>
+            <nav class="navbar navbar-expand navbar-dark zappo-bg-dark">
+                <div class="nav-item mt-0 p-0">
+                    <a class="btn nav-link zappo-text-light navbar-text p-0 backButton" href="/bienvenue" role="button" aria-disabled="true">
+                        <span class="zmdi zmdi-chevron-left mr-1 backButtonIcon"></span>&nbsp;Retour
+                    </a>
+                </div>
+            </nav>
+            <div class="container-fluid">
+                <header class="row align-items-center zappo-bg-dark">
+                    <div class="col-3 col-md-1">
+                        <img src="./assets/thumbShoppingCart.jpg" class="img-thumbnail rounded-circle img-fluid m-2 mb-4" />
+                    </div>
+                    <div class="col-9 pl-2">
+                        <h1 class="zappoTitle zappo-text-light mb-0">Panier</h1>
+                        <h2 class="subtitle zappo-text-light mb-3">A retirer sur place</h2>
+                    </div>
+                </header>
+            </div>
+        </section>
+
+        <section id="pageContent">
+            <main class="row m-1">
+                <div class="col zappo-bg-light rounded">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="noTopBorder pl-0 pr-0">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="text-left zappo-text-dark">A retirer à 20h12&nbsp;
+                                            <i class="zmdi zmdi-edit zappo-text-primary"></i>
+                                        </div>
+                                        <div class="text-right zappo-text-info">+ 3 points de fidélité
+                                            <i class="zmdi zmdi-pizza"></i>
+                                            <i class="zmdi zmdi-pizza"></i>
+                                            <i class="zmdi zmdi-pizza"></i>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="align-middle productInTable zappo-text-dark">
+                                    Margharita
+                                </td>
+                                <td class="align-middle" width="110px">
+                                    <div class="btn-toolbar m-0" role="toolbar" aria-label="Choix du nombre d'articles">
+                                        <div class="input-group btn-group-sm m-0">
+                                            <div class="input-group-prepend">
+                                                <button class="button input-group-text" id="btnGroupMinus_0">
+                                                    <i class="zmdi zmdi-minus zappo-text-primary"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" class="form-control text-center zappo-bg-light" placeholder="Input group example" aria-label="Quantité"
+                                                aria-describedby="btnGroupAddon" value="1">
+                                            <div class="input-group-append">
+                                                <button class="button input-group-text" id="btnGroupPlus_0">
+                                                    <i class="zmdi zmdi-plus zappo-text-primary"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-right align-middle pr-1 zappo-text-info font-weight-bold" width="70px">18,18
+                                    <span class="euroSymbol">€</span>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="align-middle pl-1 productInTable zappo-text-dark">
+                                    Tagliere di Verdure grigliate e marinate
+                                </td>
+                                <td class="align-middle" width="110px">
+                                    <div class="btn-toolbar m-0" role="toolbar" aria-label="Choix du nombre d'articles">
+                                        <div class="input-group btn-group-sm m-0">
+                                            <div class="input-group-prepend">
+                                                <button class="button input-group-text" id="btnGroupMinus_0">
+                                                    <i class="zmdi zmdi-minus zappo-text-primary"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" class="form-control text-center zappo-bg-light" placeholder="Input group example" aria-label="Quantité"
+                                                aria-describedby="btnGroupAddon" value="1">
+                                            <div class="input-group-append">
+                                                <button class="button input-group-text" id="btnGroupPlus_0">
+                                                    <i class="zmdi zmdi-plus zappo-text-primary"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-right align-middle pr-1 zappo-text-info font-weight-bold" width="70px">18,18
+                                    <span class="euroSymbol">€</span>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td class="align-middle pl-1 productInTable zappo-text-dark">
+                                    Agrigento
+                                </td>
+                                <td class="align-middle" width="110px">
+                                    <div class="btn-toolbar m-0" role="toolbar" aria-label="Choix du nombre d'articles">
+                                        <div class="input-group btn-group-sm m-0">
+                                            <div class="input-group-prepend">
+                                                <button class="button input-group-text" id="btnGroupMinus_0">
+                                                    <i class="zmdi zmdi-minus zappo-text-primary"></i>
+                                                </button>
+                                            </div>
+                                            <input type="text" class="form-control text-center zappo-bg-light" placeholder="Input group example" aria-label="Quantité"
+                                                aria-describedby="btnGroupAddon" value="1">
+                                            <div class="input-group-append">
+                                                <button class="button input-group-text" id="btnGroupPlus_0">
+                                                    <i class="zmdi zmdi-plus zappo-text-primary"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-right align-middle pr-1 zappo-text-info font-weight-bold" width="70px">18,18
+                                    <span class="euroSymbol">€</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </section>
+        <footer class="container-fluid fixed-bottom">
+            <div class="row zappo-bg-dark footerBlackZone">
+                <div class="col-9 col-md-11 zappo-text-light">
+                    <table class="table ml-2 mt-3">
+                        <thead style="border-top: none;">
+                            <tr>
+                                <td class="noTopBorder">
+                                    <strong>Total TTC</strong>
+                                </td>
+                                <td class="text-right noTopBorder">
+                                    <strong>51,30 €</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dont TVA 10%</td>
+                                <td class="text-right">6,12 €</td>
+                            </tr>
+                            <tr>
+                                <td>Dont TVA 20%</td>
+                                <td class="text-right">3,90 €</td>
+                            </tr>
+                            <tr>
+                                <td>Total HT</td>
+                                <td class="text-right">48,63 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="col-3 col-md-1 zappo-text-light d-flex justify-content-start m-0 p-0">
+                    <div class="actionButton">
+                        <a href="./connexion" class="zmdi-hc-stack zmdi-hc-3x">
+                            <i class="zmdi zmdi-circle zmdi-hc-3x zmdi-hc-stack-2x zappo-text-primary"></i>
+                            <i class="zmdi zmdi-card zmdi-hc-1x zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    <!-- Bootstrap & Jquery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

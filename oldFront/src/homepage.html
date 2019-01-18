@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zappo - Commande de pizza à emporter</title>
+    <!-- Shared CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <!-- CSS FOR PAGES -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/julien.css" />
+    <!-- <script src="main.js" defer></script> -->
+
+</head>
+
+<body id="productsListPage">
+    <section class='fixed-top'>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark zappo-bg-dark justify-content-between">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link zappo-text-light" href="./moncompte">
+                            <span class="zmdi zmdi-account-o zmdi-hc-fw zmdi-hc-2x"></span>&nbsp;Mon compte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link zappo-text-light" href="/infos">
+                            <span class="zmdi zmdi-store zmdi-hc-fw zmdi-hc-2x"></span>&nbsp;Le restaurant</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link zappo-text-light" href="/">
+                            <span class="zmdi zmdi-file-text zmdi-hc-fw zmdi-hc-2x"></span>&nbsp;Mentions légales</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <a class="navbar-brand align-self-center zappo-text-light" href="#">
+                    <h1 class="text-hide" style="background-image: url('./assets/logo_192_64.png'); min-width:100px;min-height:33px;background-size: cover;">Zappo App'</h1>
+                </a>
+            </div>
+
+
+            <ul id="navbarTools" class="navbar-nav">
+                <li class="nav-item mr-3">
+                    <a class="nav-link" href="/connexion">
+                        <span class="zmdi zmdi-sign-in zmdi-hc-2x zappo-text-light"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/panier">
+                        <span class="zmdi zmdi-shopping-basket zmdi-hc-2x zappo-text-light"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        <nav id="horizontalSubMenu" class="d-flex bg-light text-nowrap" style="overflow:hidden;">
+            <div class="categoryItem">
+                <a class="nav-link zappo-text-dark" href="#">
+                    <span class="zappo-active">Suggestions</span>
+                </a>
+            </div>
+            <div class="categoryItem">
+                <a class="nav-link zappo-text-dark" href="#">Pizze</a>
+            </div>
+            <div class="categoryItem">
+                <a class="nav-link zappo-text-dark" href="#">Entrées</a>
+            </div>
+            <div class="categoryItem">
+                <a class="nav-link zappo-text-dark" href="#">Boissons</a>
+            </div>
+            <div class="categoryItem">
+                <a class="nav-link zappo-text-dark" href="#">Desserts</a>
+            </div>
+        </nav>
+    </section>
+    <section id="pageContent" class="container-fluid">
+        <main class="row">
+            <div class="col p-0">
+                <ul id="productList" class="productsList pt-3">
+                    <li class="productCard pb-0 pt-3">
+                        <div class="container pr-2">
+                            <div class="row no-gutters">
+                                <div id="contentColumn" class="col-10">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <a id="product_0" class="zappo-text-black" data-toggle="collapse" href="#collapseJoint_0" role="button" aria-expanded="false"
+                                                aria-controls="collapseJoint_0">
+                                                <h2 class="zappo-text-black">Margharita
+                                                    <span class="zmdi zmdi-chevron-down zappo-text-primary"></span>
+                                                </h2>
+                                            </a>
+                                        </div>
+                                        <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                            <div class="zappo-text-info font-weight-bold prix mr-2">9,90
+                                                <span>€</span>
+                                            </div>
+                                        </div>
+                                        <div class="col pr-0">
+                                            <p>Sauce tomate San Marzano DOP, mozzarella fior di latte, basilic, huile d’olive
+                                                extra vierge
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                    <a data-toggle="collapse" href="#collapseJoint_0" role="button" aria-expanded="false" aria-controls="collapseJoint_0">
+                                        <span class="zmdi-hc-stack zmdi-hc-lg">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                            <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!----------------------------
+                                JOINT BIRRA
+                        ---------------------------->
+                        <div id="collapseJoint_0" class="productCard pb-0 pt-3 suggestion collapse" data-parent="#productList">
+                            <div class="container pr-2">
+                                <div class="row no-gutters">
+                                    <div id="contentColumn" class="col-10">
+                                        <div class="row">
+                                            <h3 class="col-12 surTitle zappo-text-info text-uppercase mb-1">Suggestion</h3>
+                                            <div class="col-9">
+                                                <h2 class="">Birra Moretti</h2>
+                                            </div>
+                                            <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                                <div class="zappo-text-info font-weight-bold prix mr-2">3,20
+                                                    <span>€</span>
+                                                </div>
+                                            </div>
+                                            <div class="col pr-0">
+                                                <p>
+                                                    <i>Birra alla Spina - 4.6°</i> - Italie. Bière blonde, légère et fruitée,
+                                                    avec peu d’amertume. L’alcool et les arômes se marient parfaitement,
+                                                    créant un goût sec et pur. Bière désaltérante.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                        <a href="#">
+                                            <span class="zmdi-hc-stack zmdi-hc-lg">
+                                                <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                                <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="productCard pb-0 pt-3">
+                        <div class="container pr-2">
+                            <div class="row no-gutters">
+                                <div id="contentColumn" class="col-10">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <a class="zappo-text-black" data-toggle="collapse" href="#collapseJoint_1" role="button" aria-expanded="false" aria-controls="collapseJoint_1">
+                                                <h2 class="">Forza d’Agro
+                                                    <span class="zmdi zmdi-chevron-down zappo-text-primary"></span>
+                                                </h2>
+                                            </a>
+                                        </div>
+                                        <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                            <div class="zappo-text-info font-weight-bold prix mr-2">14,90
+                                                <span>€</span>
+                                            </div>
+                                        </div>
+                                        <div class="col pr-0">
+                                            <p>Sauce tomate San Marzano DOP, mozzarella fior di latte, jambon blanc italien,
+                                                aubergines, courgettes, roquette, huile d’olive, basilic, crème balsamique</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                    <a data-toggle="collapse" href="#collapseJoint_1" role="button" aria-expanded="false" aria-controls="collapseJoint_1">
+                                        <span class="zmdi-hc-stack zmdi-hc-lg">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                            <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- row-->
+                        </div>
+                        <!----------------------------
+                                JOINT BIRRA IS INCLUDED IN THE PARENT LI IN ORDER TO BE HIDED IF ANOTHER ELEMENT IS DISPLAYED
+                        ---------------------------->
+                        <div id="collapseJoint_1" class="productCard pb-2 pt-3 suggestion collapse" data-parent="#productList">
+                            <div class="container pr-2">
+                                <div class="row no-gutters">
+                                    <div id="contentColumn" class="col-10">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <h3 class="surTitle zappo-text-info text-uppercase mb-1 p-0">Suggestion</h3>
+                                                <h2 class="">Delirium Tremens</h2>
+                                            </div>
+                                            <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                                <div class="zappo-text-info font-weight-bold prix mr-2">6,90
+                                                    <span>€</span>
+                                                </div>
+                                            </div>
+                                            <div class="col pr-0">
+                                                <p>
+                                                    <i>8.5° - 33cl - Belgique</i> - Bière blonde pâle, son éclat fin et régulier
+                                                    lui procure un col de mousse fin et stable. Au nez, elle a une forte
+                                                    touche d’alcool avec une senteur légèrement maltée et épicée. En bouche,
+                                                    son fameux goût d’alcool réchauffe la langue et le palais. L’arrière-goût
+                                                    est fort, long et sec-amer.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                        <a href="#">
+                                            <span class="zmdi-hc-stack zmdi-hc-lg">
+                                                <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                                <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="productCard pb-0 pt-3">
+                        <div class="container pr-2">
+                            <div class="row no-gutters">
+                                <div id="contentColumn" class="col-10">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <a class="zappo-text-black" data-toggle="collapse" href="#collapseJoint_2" role="button" aria-expanded="false" aria-controls="collapseJoint_2">
+                                                <h2>Capra miel
+                                                    <span class="zmdi zmdi-chevron-down zappo-text-primary"></span>
+                                                </h2>
+                                            </a>
+                                        </div>
+                                        <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                            <div class="zappo-text-info font-weight-bold prix mr-2">11,90
+                                                <span>€</span>
+                                            </div>
+                                        </div>
+                                        <div class="col pr-0">
+                                            <p>Tomates fraîches, crème, chèvre, mozzarella fior di latte, miel</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                    <a data-toggle="collapse" href="#collapseJoint_2" role="button" aria-expanded="false" aria-controls="collapseJoint_2">
+                                        <span class="zmdi-hc-stack zmdi-hc-lg">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                            <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- row-->
+                        </div>
+                        <!----------------------------
+                                JOINT BIRRA IS INCLUDED IN THE PARENT LI IN ORDER TO BE HIDED IF ANOTHER ELEMENT IS DISPLAYED
+                        ---------------------------->
+                        <div id="collapseJoint_2" class="productCard pb-2 pt-3 suggestion collapse" data-parent="#productList">
+                            <div class="container pr-2">
+                                <div class="row no-gutters">
+                                    <div id="contentColumn" class="col-10">
+                                        <div class="row">
+                                            <div class="col-9">
+                                                <h3 class="surTitle zappo-text-info text-uppercase mb-1 p-0">Suggestion</h3>
+                                                <h2 class="">Kasteel Rouge</h2>
+                                            </div>
+                                            <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                                <div class="zappo-text-info font-weight-bold prix mr-2">6,90
+                                                    <span>€</span>
+                                                </div>
+                                            </div>
+                                            <div class="col pr-0">
+                                                <p>
+                                                    <i>8° - 33cl - Belgique</i> - La Kasteel Rouge est un mélange unique de
+                                                    Kasteel Brune et de liqueur de cerises qui lui confère une belle robe
+                                                    acajou foncée avec une mousse beige. Au nez, on retrouve des arômes puissants
+                                                    de cerise, légèrement épicés. En bouche, la cerise domine avec un bel
+                                                    équilibre entre le sucre des malts et l’acidité des cerises
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                        <a href="#">
+                                            <span class="zmdi-hc-stack zmdi-hc-lg">
+                                                <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                                <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="productCard pb-0 pt-3">
+                        <div class="container pr-2">
+                            <div class="row no-gutters">
+                                <div id="contentColumn" class="col-10">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <a class="zappo-text-black" data-toggle="collapse" href="#collapseJoint_2" role="button" aria-expanded="false" aria-controls="collapseJoint">
+                                                <h2 class="">Mozarella Treccia</h2>
+                                            </a>
+                                        </div>
+                                        <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                            <div class="zappo-text-info font-weight-bold prix mr-2">7,90
+                                                <span>€</span>
+                                            </div>
+                                        </div>
+                                        <div class="col pr-0">
+                                            <p>Mozarella Treccia di Bufala DOP (125 gr.)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                    <a href="#">
+                                        <span class="zmdi-hc-stack zmdi-hc-lg">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                            <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="productCard pb-0 pt-3">
+                        <div class="container pr-2">
+                            <div class="row no-gutters">
+                                <div id="contentColumn" class="col-10">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <a class="zappo-text-black" data-toggle="collapse" href="#collapseJoint_2" role="button" aria-expanded="false" aria-controls="collapseJoint">
+                                                <h2 class="">Tagliere di Verdure grigliate e marinate</h2>
+                                            </a>
+                                        </div>
+                                        <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                            <div class="zappo-text-info font-weight-bold prix mr-2">9,90
+                                                <span>€</span>
+                                            </div>
+                                        </div>
+                                        <div class="col pr-0">
+                                            <p>Planche de légumes grillés et marinés</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                    <a href="#">
+                                        <span class="zmdi-hc-stack zmdi-hc-lg">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                            <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="productCard pb-0 pt-3">
+                        <div class="container pr-2">
+                            <div class="row no-gutters">
+                                <div id="contentColumn" class="col-10">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <a class="zappo-text-black" data-toggle="collapse" href="#collapseJoint_3" role="button" aria-expanded="false" aria-controls="collapseJoint_3">
+                                                <h2 class="zappo-text-black">Zappo
+                                                    <span class="zmdi zmdi-chevron-down zappo-text-primary"></span>
+                                                </h2>
+                                            </a>
+                                        </div>
+                                        <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                            <div class="zappo-text-info font-weight-bold prix mr-2">18,90
+                                                <span>€</span>
+                                            </div>
+                                        </div>
+                                        <div class="col pr-0">
+                                            <p>Ricotta, tomates fraîches, mozzarella fior di latte, jambon blanc italien , crème,
+                                                roquette, huile d’olive extra vierge, basilic, mortardelle, crème balsamique,
+                                                burrata
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                    <a id="addProduct_3" data-toggle="collapse" href="#collapseJoint_3" role="button" aria-expanded="false" aria-controls="collapseJoint_3">
+                                        <span class="zmdi-hc-stack zmdi-hc-lg">
+                                            <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                            <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!----------------------------
+                                JOINT BIRRA
+                        ---------------------------->
+                        <div id="collapseJoint_3" class="productCard pb-0 pt-3 suggestion collapse" data-parent="#productList">
+                            <div class="container pr-2">
+                                <div class="row no-gutters">
+                                    <div id="contentColumn" class="col-10">
+                                        <div class="row">
+                                            <h3 class="col-12 surTitle zappo-text-info text-uppercase mb-1">Suggestion</h3>
+                                            <div class="col-9">
+                                                <h2 class="">Birra Moretti</h2>
+                                            </div>
+                                            <div class="col-3 p-0 m-0 d-flex justify-content-end">
+                                                <div class="zappo-text-info font-weight-bold prix mr-2">3,20
+                                                    <span>€</span>
+                                                </div>
+                                            </div>
+                                            <div class="col pr-0">
+                                                <p>
+                                                    <i>Birra alla Spina - 4.6°</i> - Italie. Bière blonde, légère et fruitée,
+                                                    avec peu d’amertume. L’alcool et les arômes se marient parfaitement,
+                                                    créant un goût sec et pur. Bière désaltérante.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="addIconColumn" class="col-2 d-flex justify-content-end">
+                                        <a href="#">
+                                            <span class="zmdi-hc-stack zmdi-hc-lg">
+                                                <i class="zmdi zmdi-circle zmdi-hc-stack-2x zappo-text-primary"></i>
+                                                <i class="zmdi zmdi-shopping-cart-plus zmdi-hc-stack-1x zmdi-hc-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- END OF THE PRODUCT LIST -->
+            </div>
+        </main>
+    </section>
+    <!-- Bootstrap & Jquery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

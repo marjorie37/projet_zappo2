@@ -1,0 +1,52 @@
+extends ../layout
+    
+
+block content
+    .col
+        .row.justify-content-between.mb-4
+            h1.bleuZappoCl
+                i.mr-3.far.fa-clock
+                span.text-center Horaires
+        .row.justify-content-center.mt-5
+            .col-md-8.bg-light.boxShadowB
+                form(method='POST', action=`/admin/reglages/enregistrer/${horaire.id}`)
+                    .row.mb-4.mt-4
+                        .col
+                            .row.justify-content-center
+                                h2=horaire.day
+                    .row.justify-content-around.mt-4
+                        .col-4
+                            .row.justify-content-center.mt-4
+                                h3 Midi
+                            .row.mt-4
+                                #datetimepicker1.input-group.date(data-target-input='nearest')
+                                    input.form-control.datetimepicker-input(type='text', data-target='#datetimepicker1',value=horaire.lunch_start_time, name="lunch_start_time")
+                                    .input-group-append(data-target='#datetimepicker1', data-toggle='datetimepicker')
+                                        .input-group-text
+                                            i.far.fa-clock
+                            .row.mt-4
+                                #datetimepicker2.input-group.date(data-target-input='nearest')
+                                    input.form-control.datetimepicker-input(type='text', data-target='#datetimepicker2',value=horaire.lunch_end_time, name="lunch_end_time")
+                                    .input-group-append(data-target='#datetimepicker2', data-toggle='datetimepicker')
+                                        .input-group-text
+                                            i.far.fa-clock
+                        .col-4
+                            .row.justify-content-center.mt-4
+                                h3 Soir
+                            .row.mt-4
+                                #datetimepicker3.input-group.date(data-target-input='nearest')
+                                    input.form-control.datetimepicker-input(type='text', data-target='#datetimepicker3',value=horaire.dinner_start_time, name="dinner_start_time")
+                                    .input-group-append(data-target='#datetimepicker3', data-toggle='datetimepicker')
+                                        .input-group-text
+                                            i.far.fa-clock
+                            .row.mt-4
+                                #datetimepicker4.input-group.date(data-target-input='nearest')
+                                    input.form-control.datetimepicker-input(type='text', data-target='#datetimepicker4',value=horaire.dinner_end_time, name="dinner_end_time")
+                                    .input-group-append(data-target='#datetimepicker4', data-toggle='datetimepicker')
+                                        .input-group-text
+                                            i.far.fa-clock
+
+                    .row.justify-content-center.mt-5.mb-5
+                        button.btn.btnZappoBleu(type="submit") Modifier
+block javascripts
+    script(src='/js/dateTimePicker.js')

@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    .col
+        .row.justify-content-between.mb-4
+            h1.text-center.bleuZappoCl Créer un horaire
+        .row
+            form(method='POST', action='/admin/reglages/record')
+                input(class="form-control", required="required",  name="day", placeholder="Day")
+                input(class="form-control", required="required",  name="lunch_start_time", placeholder="lunch start time")
+                input(class="form-control", required="required",  name="lunch_end_time", placeholder="lunch end time")
+                input(class="form-control", required="required",  name="dinner_start_time", placeholder="dinner start time")
+                input(class="form-control", required="required",  name="dinner_end_time", placeholder="dinner end time")
+                
+                .form-check
+                    input#exampleRadios1.form-check-input(type='radio', name='shift_lunch', value='1')
+                    label.form-check-label(for='exampleRadios1') service midi
+                .form-check
+                    input#exampleRadios2.form-check-input(type='radio', name='shift_dinner', value='1')
+                    label.form-check-label(for='exampleRadios2') service soir
+                button(type="submit", class="btn btn-outline-dark") Enregistrer cette horaire
+            
+            
+      

@@ -1,0 +1,48 @@
+extends ../layout
+
+block content
+    .col
+        .row.justify-content-between.mb-4
+            h1.bleuZappoCl
+                i.mr-3.fas.fa-piggy-bank
+                span.text-center Publier la promotion
+        .row.justify-content-center
+            .col-9.bg-light.boxShadowB.p-4
+                .row
+                    .col
+                        .card.text-center
+                            .card-header.bleuZappoBg.text-light
+                                .row.justify-content-start
+                                    .col
+                                        h6=`${discounts.name}`
+                                    .col
+                                        h6=`Code : ${discounts.code}`
+                            .card-body
+                                h5.card-title=`Produits concernés par ${discounts.percentage} % de réduction`
+                                hr.mr-5.ml-5.bleuZappoBg
+                                p.card-text=discounts.jsonToStr
+                            .card-footer.bleuZappoBg.text-light
+                                p=`Valide jusqu'au : ${discounts.endAt}`
+                .row.justify-content-center
+                    .col-8.mt-5
+                        form(method='POST', action=`/admin/promotions/publier/${discounts.id}`)
+                            .col
+                                .row.justify-content-center
+                                    p#messageValidator
+                            input(class="form-control", required="required",  name="title", placeholder="Titre")
+                            textarea.mt-5(class="form-control", required="required",  name="description", placeholder="Message",rows="1")
+                            #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='mySmallModalLabel', aria-hidden='true',focus='true')
+                                .modal-dialog.modal-dialog-centered.modal-sm
+                                    .modal-content.p-3
+                                        .row
+                                            .col.text-center
+                                                h3.mt-2.bleuZappoBg.text-light Confirmer
+                                                p.mt-3.mb-3 Êtes-vous sûr de vouloir envoyer ce mailing à vos utilisateurs ? 
+                                        .row
+                                            .col-6.text-left
+                                                button.btn.btn-danger.m-2(data-dismiss="modal") Annuler
+                                            .col-6.text-right
+                                                button.btn.btn-success.m-2(type="submit") Envoyer
+                        .row.justify-content-center
+                            button.mt-3(data-toggle="modal" data-target="#myModal", class="btn btn-outline-dark") Publier
+        

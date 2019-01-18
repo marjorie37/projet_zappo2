@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  main.col-md-9.ml-sm-auto.col-lg-10.pt-3.px-4(role='main')
+        .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pb-2.mb-3.border-bottom
+          h1.text-uppercase Erreur : 500 🤓
+        div.card
+          div.card-body
+            h3="Oups!! Petite erreur sur le serveur" 
+            div.jumbotron
+              p=message
+              p=stack

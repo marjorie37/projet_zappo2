@@ -1,0 +1,76 @@
+extends ../layout
+
+
+block content
+        .col
+            .row.justify-content-between.mb-4
+                h1.bleuZappoCl
+                    i.mr-3.fas.fa-piggy-bank
+                    span.text-center Promotions
+                a(href='/admin/promotions/editer' role="button")
+                    .btn.btnZappoOutline
+                        |  Nouvelle promotion
+                        i.fas.fa-plus-circle.ml-2 
+            hr.borderBleuZappo 
+            .table-responsive-md.table-striped
+                    table.table.mt-3
+                        thead
+                            tr
+                                th.text-center.font-weight-bold(scope='col') Nom
+                                th.text-center.font-weight-bold(scope='col') Poucentage
+                                th.text-center.font-weight-bold(scope='col') Code
+                                th.text-center.font-weight-bold(scope='col') Date de fin
+                                th.text-center.font-weight-bold(scope='col') Publié
+                                th.text-center.font-weight-bold(scope='col') Envoyé
+                                th.text-center.font-weight-bold(scope='col') Détails
+                                th.text-center.font-weight-bold(scope="col") Supprimer
+
+                        tbody 
+                            each discount in discounts
+                                tr
+                                    td
+                                        .text-center
+                                            = `${discount.name}`
+                                    td
+                                        .text-center
+                                            =`- ${discount.percentage} %`
+                                    td
+                                        .text-center
+                                           =`${discount.code}`
+                                    td
+                                        .text-center
+                                            =`${discount.endAt}`
+                                    td
+                                        .text-center
+                                            if discount.publish
+                                                i.far.fa-check-circle.fa-2x.bleuZappoCl
+                                            else
+                                                i.far.fa-circle.fa-2x.bleuZappoCl
+
+                                    td
+                                        .text-center
+                                            if discount.title
+                                                i.far.fa-check-circle.fa-2x.bleuZappoCl
+                                            else
+                                                i.far.fa-circle.fa-2x.bleuZappoCl
+
+                                    td.text-center
+                                        .btn-group(role="group" aria-label="Contrôles")
+                                        a(href=`/admin/promotions/detail/${discount.id}`)
+                                            button.btn.btnZappoBleuEdit
+                                                i.fas.fa-clipboard-list.fa-2x
+                                    td.text-center
+                                        .btn-group(role="group" aria-label="Contrôles")
+                                        a(href=`/admin/promotions/supprimer/${discount.id}`)
+                                            button.btn.btnZappoBleu
+                                                i.fas.fa-trash-alt.fa-lg.p-2
+
+
+
+
+
+
+
+
+block javascripts 
+      script(src='/js/dateTimePicker.js')

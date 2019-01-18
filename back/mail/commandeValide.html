@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" id="commandeenvoyer">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title></title>
+</head>
+
+<body style="background-image:url(../public/images/background.gif);color: rgb(44, 61, 78); font-family: sans-serif;
+ margin: auto; width: 80%;margin-bottom: 3rem">
+
+    <div style="text-align: center; margin-top: 1.5rem ">
+        <img src="../public/images/zappoLogoSmall.png " />
+    </div>
+    <div>
+        <div style="padding: 1.3rem ">
+            <h3 style="text-align: center">Bonjour ${nomduclient}</h3>
+            <div style="width: 100%;height: 100px;background-color: rgb(44, 61, 78);  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                <h1 style="color:azure;position:relative;top:25%;padding-left: 2rem">Commande acceptée</h1>
+            </div>
+            <div style="background:azure;padding: 2rem">
+                <div>
+                    <p>Commande numéro : ${}</p>
+                </div>
+                <div>
+                    <h1 style="text-align:center;margin-top: 3.5rem; margin-bottom: 3.5rem">Votre commande a été accepté</h1>
+                    <h3 style="margin-bottom: 2rem">Vous pouvez venir retirer votre commande dans notre restaurant à partir de ${heurecommande}. Bon appétit
+                        !
+                    </h3>
+                    <button style="margin-bottom:2rem;margin-left: auto; background-color: rgb(44, 61, 78);
+    border: none;
+    color: azure;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ font-size: 16px;">
+                        <h2>Voir votre commande</h2>
+                    </button>
+                    <div style="border-top: 2px solid rgb(44, 61, 78);width: 100%;overflow: scroll;">
+                        <div style="text-align: center">
+                            <h2>Commande #${numerocommande}</h2>
+                        </div>
+                        <div style="float: left">
+                            <p>Zappo,
+                                <br/> 6 Rue Challemel Lacour,
+                                <br/> 69007 Lyon</p>
+
+                        </div>
+                        <div style="float: right">
+                            <p>${nomclient}
+                                <br/> ${adresseclient}
+                                <br/> ${telephoneclient}</p>
+                        </div>
+
+                    </div>
+                    <div style="overflow: scroll">
+                        <table style="overflow: scroll; text-align: center; margin-top:1.4rem;width: 100%;border:1px solid black">
+                            <tr>
+
+                                <td style="width: 33%;">
+                                    <h3>${quantite}</h3>
+                                </td>
+                                <td style="width: 33%">
+                                    <h3>${nomproduit}</h3>
+                                </td>
+                                <td style="width: 33%">
+                                    <h3>${prix}</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h1>Total</h1>
+                                </td>
+                                <td></td>
+                                <td colspan="2">
+                                    <h1>${totalcommande}</h1>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div style="position: relative;bottom: 0px">
+                        <p>Merci, L'équipe de Zappo</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="background-color:rgba(193, 56, 50,1);text-align: center;width: 80%;margin: auto;color: azure;margin-top: 3rem">
+
+                <small>Pour les questions relatives aux plats ou au paiement, vous pouvez appeler Zappo, 6 Rue Challemel Lacour,
+                    69007 Lyon au 04 72 71 79 88.</small>
+                <br/>
+                <small> Votre numéro de commande Zappo est ${numerocommande}. Zappo, 6 Rue Challemel Lacour, 69007 Lyon </small>
+                <br/>
+                <small>© 2018 Zappo</small>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+/*//////////////////////////////////////////////////
+//  Webfonts in 3 formats for more compatibility  // 
+//////////////////////////////////////////////////*/
+
+@font-face {
+  font-family: "Bernardo Moda";
+  src: url("/src/assets/fonts/BernardoModaBold.woff2") format("woff2"),
+    url("/src/assets/fonts/BernardoModaBold.woff") format("woff"),
+    url("/src/assets/fonts/BernardoModaBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bernardo Moda";
+  src: url("/src/assets/fonts/BernardoModa.woff2") format("woff2"),
+    url("/src/assets/fonts/BernardoModa.woff") format("woff"),
+    url("/src/assets/fonts/BernardoModa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bernardo Moda";
+  src: url("/src/assets/fonts/BernardoModaSemibold.woff2") format("woff2"),
+    url("/src/assets/fonts/BernardoModaSemibold.woff") format("woff"),
+    url("/src/assets/fonts/BernardoModaSemibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/*//////////////////////////////////////////////////
+//                  General rules                 // 
+//////////////////////////////////////////////////*/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.db {
+  background-color: red;
+}

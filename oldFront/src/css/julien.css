@@ -1,0 +1,195 @@
+/*//////////////////////////////////////////////////
+//          HOMEPAGE (PRODUCT LIST)               // 
+//////////////////////////////////////////////////*/
+#horizontalSubMenu {
+  box-shadow: 0 4px 8px 0 rgba(47, 63, 81, 0.22),
+    0 6px 30px 0 rgba(47, 63, 81, 0.22);
+}
+
+#horizontalSubMenu .categoryItem .zappo-active {
+  border-bottom: 2px var(--main-blueGrey-color) solid;
+  padding-bottom: 0.6rem;
+}
+
+#productsListPage #pageContent {
+  /* 7 rem padding to prevent overlap of the header */
+  padding-top: 7rem;
+}
+#userProfilePage #pageContent {
+  /* 7 rem padding to prevent overlap of the header */
+  padding-top: 15rem;
+}
+#productsListPage #pageContent .productsList {
+  background: var(--main-whiteGrey-color);
+  margin: 0;
+  padding: 0;
+}
+#productsListPage #pageContent .productCard {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #c6c9ca;
+}
+
+#productsListPage #pageContent .productCard a {
+  text-decoration: none !important;
+  color: var(--main-blueGrey-color) !important;
+}
+
+#productsListPage #pageContent .productCard h2 {
+  font-size: 1.4rem;
+}
+#productsListPage #pageContent .productCard h3 {
+  font-size: 0.6rem;
+}
+#productsListPage #pageContent .productCard .prix {
+  font-size: 0.9rem;
+}
+#productsListPage #pageContent .productCard .prix span {
+  color: #919191;
+}
+#productsListPage #pageContent .productCard p {
+  font-size: 0.8rem;
+}
+#productsListPage #pageContent .suggestion {
+  background-color: #e1e5e6;
+  box-shadow: 0 4px 8px 0 rgba(47, 63, 81, 0.22) inset,
+    0 6px 30px 0 rgba(47, 63, 81, 0.22) inset;
+}
+
+/*//////////////////////////////////////////////////
+//               SHOPPING CART PAGE               // 
+//////////////////////////////////////////////////*/
+
+#shoppingCartPage header {
+  /* height: 120px; */
+  background-color: var(--main-blueGrey-color);
+}
+
+#shoppingCartPage .table {
+  line-height: 1rem;
+  font-size: 0.9rem;
+}
+#shoppingCartPage .table td {
+  padding: 0.5rem 0 0.5rem 0;
+}
+#shoppingCartPage .table thead td {
+  font-size: 1.3rem;
+}
+#shoppingCartPage .table thead th {
+  font-weight: normal;
+}
+#shoppingCartPage .table .noTopBorder {
+  border-top: none;
+}
+
+#shoppingCartPage .table td {
+  border-top-style: dotted;
+}
+#shoppingCartPage .table .price {
+  border-top-style: dotted;
+}
+
+#shoppingCartPage .table .productInTable {
+  font-size: 1rem;
+  line-height: auto;
+}
+
+/*//////////////////////////////////////////////////
+//                      LAYOUT                    // 
+//////////////////////////////////////////////////*/
+
+#map {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 0em;
+  width: 100%;
+}
+
+#goodNewsPage #pageContent {
+  /* 7 rem padding to prevent overlap of the header */
+  margin-top: 12rem;
+}
+
+#shoppingCartPage #pageContent {
+  /* 7 rem padding to prevent overlap of the header */
+  margin-top: 12rem;
+}
+
+#loginPage #pageContent {
+  /* 7 rem padding to prevent overlap of the header */
+  padding-top: 12rem;
+}
+
+#splashScreenPage {
+  background-image: none;
+  background-color: var(--main-blueGrey-color);
+}
+#splashScreenRow {
+  height: 100vh;
+}
+
+p.receiptAddress {
+  font-size: 0.8rem;
+}
+p.receiptPrice {
+  font-weight: bold;
+  font-size: 2rem;
+}
+/*//////////////////////////////////////////////////
+//                 Shared Typography              // 
+//////////////////////////////////////////////////*/
+.euroSymbol {
+  color: #919191;
+}
+
+h3.loginTitles {
+  font-weight: normal;
+  font-size: 1.2rem;
+  color: var(--main-blueGrey-color);
+}
+/*//////////////////////////////////////////////////
+//                    User account                // 
+//////////////////////////////////////////////////*/
+.decompteFid {
+  font-weight: normal;
+  position: absolute;
+  top: 65%;
+  left: 2rem;
+}
+
+/*//////////////////////////////////////////////////
+  //                  Media Queries                 // 
+  //////////////////////////////////////////////////*/
+
+/* Mandatory to display properly the pageContent
+  sections because of the fixed-top property of
+  the header (positionned relatively) */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #shoppingCartPage #pageContent {
+    margin-top: 20rem;
+  }
+  #goodNewsPage #pageContent {
+    margin-top: 20rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #shoppingCartPage #pageContent {
+    margin-top: 13rem;
+  }
+  #goodNewsPage #pageContent {
+    margin-top: 13rem;
+  }
+}

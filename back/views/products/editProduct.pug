@@ -1,0 +1,111 @@
+extends ../layout
+
+block content
+    .col
+      .row.justify-content-between.mb-4
+        h1.bleuZappoCl
+          i.mr-3.far.fa-edit
+          span.text-center Editer
+      .row.justify-content-center.mt-5
+          .col-lg-8.bg-light.boxShadowB
+            .row.justify-content-center
+                .col-sm-8
+                  .row.mb-5.mt-4.justify-content-center
+                    h3.text-muted.text-center #{product.name}
+                  form(method="POST", action=`/admin/produits/update/${product.id}`,enctype="multipart/form-data")
+                    .col
+                      .row.justify-content-center
+                        p#messageValidator
+                    .form-group
+                      label(for='name') Nom
+                      input#name.form-control(name="name", type='text', aria-describedby='nameHelp', value=`${product.name}`)
+                      small#nameHelp.form-text Nom du produit
+                    .form-group
+                      label(for='description') Description
+                      textarea#description.form-control(name="description", aria-describedby='descriptionHelp',rows="3")
+                        =product.description
+                      small#descriptionHelp.form-text Description en un ou deux paragraphes max.
+                    .row
+                      .col
+                        .form-group
+                          label(for='ht_price') Prix hors taxe
+                          input#ht_price.form-control(name="ht_price", type='text', aria-describedby='ht_priceHelp',  value=`${product.ht_price}`)
+                          small#ht_priceHelp.form-text Prix hors taxe (float accepté).
+                      .col
+                        .form-group
+                          label(for='ht_price') Prix toute taxe
+                          input#ttc_price.form-control(name="ttc_price", type='text', aria-describedby='ttc_priceHelp',  value=`${product.ttc_price}`)
+                    .form-group
+                      label(for='tva') Taux de TVA
+                      select#tva.form-control(name="tva", class="form-control", aria-describedby='tvaHelp')
+                        option(value='10', selected= product.tva === 10) 10
+                        option(value='20', selected= product.tva === 20) 20
+                      small#tvaHelp.form-text
+                        | Exprimé en pourcentage. 10 pour la plupart des produits. 20 pour les sodas sucrés et alcools.
+                    .form-group
+                      label(for='state') État
+                      select#state.form-control(name="state", class="form-control", aria-describedby="stateHelp")
+                        option(value='1',selected= product.state) Activée
+                        option(value='0',selected= !product.state) Désactivée
+                      small#stateHelp.form-text Permet de masquer le produit (en cas d'indisponibilité ou autre).
+                    .form-group
+                      label(for='productAssocie') Produit Associé
+                      select#productAssocie.form-control(name="associate", class="form-control", aria-describedby='productAssocieHelp')
+                          option(value=null) Aucun
+                          each associe in productAssocie
+                              if associate
+                                option(value=associe.id, selected=(associate.id === associe.id) ? true : false)=associe.name
+                              else
+                                option(value=associe.id)=associe.name
+                      small#productAssocieHelp.form-text Permet de mettre en relation un produit à un autre produit (Association) 
+                    .form-group
+                      label(for='favorites') Suggestion du moment
+                      select#state.form-control(name="favorites", class="form-control", aria-describedby="favoritesHelp")
+                        option(value='1', selected= product.favorites) Activée
+                        option(value='0',selected= !product.favorites) Désactivée
+                      small#favoritesHelp.form-text Permet d'afficher le produit dans l'onglet suggestions.
+                    .form-group
+                      label(for='category_id') Catégorie
+                      select#category_id.form-control(name="category_id")
+                        option(value='2', selected= product.category_id === 2) Entrées
+                        option(value='1', selected= product.category_id === 1) Pizze
+                        option(value='3', selected= product.category_id === 3) Desserts
+                        option(value='4', selected= product.category_id === 4) Boissons
+                        option(value='5', selected= product.category_id === 5) Bambino
+                      small#category_idHelp.form-text Catégorie principale
+                    .form-group
+                      label(for='sub_category') Sous-catégorie
+                      select#sub_category.form-control(name="sub_category")
+                        
+                        option(value='Antipasti', selected= product.sub_category === 'Antipasti') Antipasti
+                        //- option(value='Contorni', selected= product.sub_category === 'Contorni') Contorni
+                        option(value='Pizze', selected= product.sub_category === 'Pizze') Pizze
+                        option(value='Calzoni', selected= product.sub_category === 'Calzoni') Calzoni
+                        option(value='Dolci', selected= product.sub_category === 'Dolci') Dolci
+                        //- option(value='Gelati', selected= product.sub_category === 'Gelati') Gelati
+                        option(value='Caffe', selected= product.sub_category === 'Caffe') Caffe
+                        //- option(value='Vini', selected= product.sub_category === 'Vini') Vini
+                        option(value='Birra', selected= product.sub_category === 'Birra') Birra
+                        //- option(value='Alcolici', selected= product.sub_category === 'Alcolici') Alcolici
+                        option(value='Softs', selected= product.sub_category === 'Softs') Softs
+                        option(value='Aperitivo', selected= product.sub_category === 'Aperitivo') Aperitivo
+                        option(value='Digestivo', selected= product.sub_category === 'Digestivo') Digestivo
+
+                      small#sub_categoryHelp.form-text Sous-catégorie.
+                    .form-group
+                      label(for='uploadFile')= product.url.length > 0 ? 'Image actuelle : ' + product.url : "Ajouter une image"
+                      input#uploadFile.form-control(name="uploadFile", type='file', aria-describedby='uploadFile')
+                    .form-group
+                      label(for="") Allergenes
+                        a(href="/admin/produits/addallergene", title="Créer un allergène")
+                          i.fas.fa-plus-circle.ml-2.btnZappoOutline(style="border: none")
+                      br
+                      each allergene in allergenes
+                        if product.allergens.indexOf(allergene.name) > -1 
+                          input(type="checkbox", checked ,name=`allergens`,id=`${allergene.id}`, value=allergene.name)
+                          label.mr-2(for=`${allergene.id}`)=`${allergene.name} |`
+                        else
+                          input(type="checkbox", name=`allergens`,id=`${allergene.id}`, value=allergene.name)
+                          label.mr-2(for=`${allergene.id}`)=`${allergene.name} |`
+                    .row.justify-content-center
+                      button.btn.btnZappoBleu.mb-3.mt-2(type="submit") Mettre à jour le produit

@@ -1,0 +1,441 @@
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0
+}
+
+.zappoBackLayout {
+    display: flex;
+}
+
+/*BACKGROUND PICTURES CLASS*/
+
+.backgroundCarreZappo {
+    background-image: url(../images/background.gif);
+    min-height: 93vh;
+}
+
+.logoZappo {
+    background-image: url(../images/logoZappoBleu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*BACKGROUND, COLOR, and BORDER COLOR CLASS*/
+
+.bleuZappoBg {
+    background: rgb(44, 61, 78);
+}
+
+.borderBleuZappo {
+    border-color: rgb(44, 61, 78);
+}
+
+.bleuZappoCl {
+    color: rgb(44, 61, 78);
+}
+
+.blancZappoCl {
+    color: #fff;
+}
+
+.RougeZappoBg {
+    background: rgb(193, 56, 50);
+}
+
+/*VERTICAL MENU ZAPPO*/
+
+.zappoMenuV {
+    position: sticky;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+    background: #fff;
+}
+
+.zappoMenuV li {
+    width: 300px;
+    height: 120px;
+    overflow: hidden;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 2px rgba(44, 61, 78, 0.8);
+    -moz-box-shadow: 1px 1px 2px rgba(44, 61, 78, 0.8);
+    box-shadow: 1px 1px 2px rgba(44, 61, 78, 0.8);
+    margin-bottom: 4px;
+    border-right: 10px solid rgb(44, 61, 78);
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.zappoMenuV li a {
+    text-align: left;
+    width: 100%;
+    position: relative;
+    display: flex;
+    height: auto;
+    color: rgb(44, 61, 78);
+}
+
+.zappoMenuV-icon {
+    font-size: 20px;
+    text-shadow: 0px 0px 1px rgba(44, 61, 78, 0.8);
+    color: rgba(44, 61, 78);
+    line-height: 90px;
+    position: absolute;
+    width: 90px;
+    left: 10px;
+    text-align: center;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.zappoMenuV-content {
+    position: absolute;
+    left: 100px;
+    width: 100%;
+    height: 60px;
+    top: 20px;
+}
+
+.zappoMenuV-main {
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.zappoMenuV-sub {
+    color: rgba(44, 61, 78, 0.8);
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.zappoMenuV li:hover {
+    border-color: #fff;
+    background: rgb(44, 61, 78);
+}
+
+.zappoMenuV li:hover .zappoMenuV-icon {
+    color: #fff;
+    text-shadow: 0px 0px 1px rgb(44, 61, 78);
+    font-size: 40px;
+}
+
+.zappoMenuV li:hover .zappoMenuV-main {
+    color: #fff;
+    font-size: 16px;
+}
+
+.zappoMenuV li:hover .zappoMenuV-sub {
+    color: #fff;
+    font-size: 20px;
+}
+
+/*CLASS BUTTON ZAPPO*/
+
+.btnZappoBleu {
+    background: rgb(44, 61, 78);
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 0px 3px rgb(44, 61, 78);
+    transition: 0.8s;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+}
+
+.btnZappoBleu:hover {
+    color: rgb(44, 61, 78);
+    background: white;
+    font-size: 18px;
+}
+
+.btnZappoBleuEdit {
+    background: rgb(44, 61, 78);
+    color: white;
+    font-size: 13px;
+    box-shadow: 0px 0px 3px rgb(44, 61, 78);
+    transition: 0.8s;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+}
+
+.btnZappoBleuEdit:hover {
+    color: rgb(44, 61, 78);
+    background: white;
+    font-size: 13px;
+}
+
+.btnZappoBlc {
+    background: white;
+    color: rgb(44, 61, 78);
+    font-size: 18px;
+    box-shadow: 0px 0px 3px rgb(44, 61, 78);
+    transition: 0.8s;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+}
+
+.btnZappoBlc:hover {
+    color: white;
+    background: rgb(44, 61, 78);
+    font-size: 18px;
+    
+}
+
+.table th,.table td {
+    vertical-align: inherit;
+}
+.btnZappoBleu a{
+    text-decoration: none;
+    color:white;
+    transition: 0.8s;
+}
+
+.btnZappoBleu:hover a{
+    color: rgb(44, 61, 78);
+}
+.btnZappoOutline {
+    background: transparent;
+    border: 1px solid rgb(44, 61, 78);
+    color: rgb(44, 61, 78);
+    font-size: 18px;
+    box-shadow: 0px 0px 3px #fff;
+    transition: 0.8s;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+}
+
+.btnZappoOutline:hover {
+    color: #fff;
+    background: rgb(44, 61, 78);
+    font-size: 18px;
+}
+
+.btnZappoOutlineProduct {
+    background: transparent;
+    border: 1px solid rgb(44, 61, 78);
+    color: rgb(44, 61, 78);
+    font-size: 20px;
+    box-shadow: 0px 0px 3px #fff;
+    transition: 0.8s;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.btnZappoOutlineProduct:hover {
+    color: #fff;
+    background: rgb(44, 61, 78);
+    font-size: 20px;
+}
+
+#graphique {
+    width: 400px;
+    height: 400px;
+}
+
+/*CARD DASHBOARD*/
+
+.cardZappoDash {
+    width: 15rem;
+    margin-top: 1rem;
+}
+
+.tailleFix {
+    height: 25vh;
+    overflow-y: scroll;
+}
+
+.btnPromo {
+    background: rgb(44, 61, 78);
+    border: 1px solid rgb(44, 61, 78);
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0px 0px 3px #fff;
+    transition: 0.8s;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+}
+
+.btnPromoSelect {
+    background: rgb(193, 56, 50);
+    border: 1px solid rgb(193, 56, 50);
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0px 0px 3px #fff;
+    transition: 0.8s;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+}
+
+/*Rewrite of class form-control*/
+
+.form-control {
+    border: inherit;
+    border-radius: inherit;
+    border-bottom: 2px solid black;
+    color: rgb(44, 61, 78);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: inherit;
+}
+
+.form-control:focus {
+    box-shadow: inherit;
+    border-color: rgb(193, 56, 50);
+    background: rgba(44, 61, 78, 0.4)
+}
+
+.input-group-text {
+    border: inherit;
+    border-radius: inherit;
+    background: inherit;
+    color: rgb(44, 61, 78);
+    border-bottom: 2px solid black;
+}
+
+.boxShadowB {
+    box-shadow: 20px 20px 50px 10px rgb(44, 61, 78);
+}
+
+.boxShadowBL {
+    box-shadow: 5px 5px 12px 2px rgb(44, 61, 78);
+}
+
+/*INPUT Checkbox*/
+
+/* Base for label styling */
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="checkbox"]:not(:checked)+label,
+[type="checkbox"]:checked+label {
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* checkbox aspect */
+
+[type="checkbox"]:not(:checked)+label:before,
+[type="checkbox"]:checked+label:before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 0px;
+    width: 29px;
+    height: 25px;
+    border: 2px dotted #41275d;
+    background: white;
+    border-radius: 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+/* checked mark aspect */
+
+[type="checkbox"]:not(:checked)+label:after,
+[type="checkbox"]:checked+label:after {
+    content: '✔';
+    position: absolute;
+    top: 0px;
+    left: 1px;
+    font-size: 44px;
+    line-height: 0.4;
+    color: #2c3d4e;
+    transition: all .2s;
+}
+
+/* checked mark aspect changes */
+
+[type="checkbox"]:not(:checked)+label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+[type="checkbox"]:checked+label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* disabled checkbox */
+
+[type="checkbox"]:disabled:not(:checked)+label:before,
+[type="checkbox"]:disabled:checked+label:before {
+    box-shadow: none;
+    border-color: #999999;
+    background-color: #2c3d4e;
+}
+
+[type="checkbox"]:disabled:checked+label:after {
+    color: #999999;
+}
+
+[type="checkbox"]:disabled+label {
+    color: #ffffff;
+}
+
+/* accessibility */
+
+[type="checkbox"]:checked:focus+label:before,
+[type="checkbox"]:not(:checked):focus+label:before {
+    border: 2px dotted #2c3d4e;
+}
+
+/* hover style just for information */
+
+.label:hover:before {
+    border: 2px solid #2c3d4e !important;
+    background: #2c3d4e;
+}
+
+/*PROMOTIONS CHANGE CHECKBOX*/
+
+.checkboxhidden {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .zappoMenuV {
+        display: none;
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "development": {
+    "username": "root",
+    "password": "password",
+    "database": "zappo",
+    "host": "localhost",
+    "dialect": "mysql",
+    "logging": false,
+    "timezone": "+02:00"
+  }
+}

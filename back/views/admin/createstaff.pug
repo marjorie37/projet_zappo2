@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+        .col
+            .row.justify-content-between.mb-4
+                h1.bleuZappoCl
+                    i.mr-3.far.fa-user
+                    span.text-center Créer un compte
+            .row.justify-content-center.mt-5
+                .col-md-8.bg-light.boxShadowB
+                    form.needs-validation(method="POST", action=`/admin/manage/creer` novalidate)
+                        .row.justify-content-around.mt-5
+                            .col
+                                .row.justify-content-center
+                                    p#messageValidator
+                                .row.justify-content-center.mt-4
+                                    .form-group
+                                        label.h6(for='inputName') Identifiant
+                                        input(class="form-control",name="name",type="text",id="inputName", placeholder="",required)
+                                .row.justify-content-center.mt-4
+                                    .form-group
+                                        label.h6(for='inputPassword') Mot de passe
+                                        input(class="form-control",name="password",id="inputPassword",type="password",placeholder="*****",required)
+                                .row.justify-content-center.mt-4
+                                    .form-group
+                                        label.h6(for='inputConfirmPassword') Confirmer votre mot de passe
+                                        input(class="form-control",name="confirmPassword",id="inputConfirmPassword",type="password",placeholder="",required)
+                                        .valid-feedback hello
+                                        .invalid-feedback bobby
+                                .row.justify-content-center.mt-5.mb-5
+                                    button.btn.btnZappoBleu(type="submit") Valider
+

@@ -1,0 +1,61 @@
+/*//////////////////////////////////////////////////
+//  Webfonts in 3 formats for more compatibility  // 
+//////////////////////////////////////////////////*/
+
+@font-face {
+  font-family: "Bernardo Moda";
+  src: url("../fonts/BernardoModaBold.woff2") format("woff2"),
+    url("../fonts/BernardoModaBold.woff") format("woff"),
+    url("../fonts/BernardoModaBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bernardo Moda";
+  src: url("../fonts/BernardoModa.woff2") format("woff2"),
+    url("../fonts/BernardoModa.woff") format("woff"),
+    url("../fonts/BernardoModa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bernardo Moda";
+  src: url("../fonts/BernardoModaSemibold.woff2") format("woff2"),
+    url("../fonts/BernardoModaSemibold.woff") format("woff"),
+    url("../fonts/BernardoModaSemibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/*//////////////////////////////////////////////////
+//                  General rules                 // 
+//////////////////////////////////////////////////*/
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.db {
+  background-color: red;
+}
+
+/*//////////////////////////////////////////////////
+//               Some specific rules              // 
+//////////////////////////////////////////////////*/
+
+@media print {
+  .hiddenPrint {
+    display: none;
+  }
+  #liste {
+    width: 100%;
+  }
+}
+
+.selectDate input {
+  color: #fff;
+}

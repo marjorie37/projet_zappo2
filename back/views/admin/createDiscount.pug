@@ -1,0 +1,9 @@
+  #v-pills-tab.nav.flex-column.nav-pills(role='tablist', aria-orientation='vertical')
+                    each cat in category
+                        a.nav-link(id=`v-pills-${cat.name}-tab` class=`${cat.name === "Pizze" ? "active" : ""}`,data-toggle='pill', href=`#v-pills-${cat.name}`, role='tab', aria-controls=`v-pills-${cat.name}`)= cat.name
+                #v-pills-tabContent.tab-content
+                    each cat in category
+                        .tab-pane.fade.show(id=`v-pills-${cat.name}`,class=`${cat.name === "Pizze" ? "active" : ""}`,role='tabpanel', aria-labelledby=`v-pills-${cat.name}-tab`)
+                            .row
+                                each product in cat.products
+                                    button.btn.btnZappoBlc= product.name

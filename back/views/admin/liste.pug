@@ -1,0 +1,61 @@
+extends ../layout
+
+
+block css
+    link(href='/stylesheets/switch.css', rel='stylesheet')
+
+block content
+        .col
+            .row.justify-content-between.mb-4
+                h1.bleuZappoCl
+                    i.mr-3.far.fa-user
+                    span.text-center Utilisateurs
+                a(href=`/admin/manage/creer`)
+                    button.btn.btnZappoBleu
+                        i.fas.fa-plus-circle.mr-2
+                        | Ajouter un utilisateur
+            hr.borderBleuZappo
+            .table-responsive-md
+                table.table.table-striped
+                    thead.bleuZappoBg
+                        tr
+                            th.text-light.text-center= "Nom"
+                            th.text-light.text-center= "Status"
+                            th.text-light.text-center= "Etat du compte"
+                            th.text-light.text-center= "Suppression"
+                    tbody
+                        each equipe in staff
+                            tr
+                                if equipe.state
+                                    td.text-dark.font-weight-bold=equipe.name
+                                else
+                                    td.text-danger.font-weight-bold=equipe.name
+                                if equipe.position
+                                    if equipe.state
+                                        td.text-center.text-dark="Administrateur"
+                                    else
+                                        td.red.text-center="Administrateur"
+                                else
+                                    if equipe.state
+                                        td.text-center.text-dark="Employé"
+                                    else
+                                        td.red.text-center="Employé"
+                                
+                                td
+                                    .text-center
+                                        if equipe.state
+                                            label.switch
+                                                a(href=`/admin/manage/toggleActive/${equipe.id}`)
+                                                    input(type='checkbox' checked)
+                                                    span.slider.round
+                                        else
+                                            label.switch
+                                                a(href=`/admin/manage/toggleActive/${equipe.id}`)
+                                                    input(type='checkbox')
+                                                    span.slider.round
+
+                                td
+                                    .text-center
+                                        a(href=`/admin/manage/supprimer/${equipe.id}`)
+                                            button.btn.btnZappoBleu
+                                                i.fas.fa-trash-alt.fa-lg.p-2

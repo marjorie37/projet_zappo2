@@ -1,0 +1,16 @@
+Problèmes : 
+
+ - redir user account modif mettre un history à la place du href
+ 
+ - login employés (la page admin/login ne s'ouvre pas et la connection ne marche pas)
+
+https://www.codementor.io/olatundegaruba/password-reset-using-jwt-ag2pmlck0
+ - data time picker : affichage certains horaires
+
+ - remise au panier
+
+ - panier ne se vide pas après validation de commande
+
+ - centrage commande validée pour grand écran
+ (contordernotification)
+ - problèmes affichage statistiques

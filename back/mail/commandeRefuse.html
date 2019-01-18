@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" id="commandeenvoyer">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title></title>
+</head>
+
+<body style="background-image:url(../public/images/background.gif);color: rgb(44, 61, 78); font-family: sans-serif;
+ margin: auto; width: 80%;margin-bottom: 3rem">
+
+    <div style="text-align: center; margin-top: 1.5rem ">
+        <img src="../public/images/zappoLogoSmall.png " />
+    </div>
+    <div>
+        <div style="padding: 1.3rem ">
+            <h3 style="text-align: center">Bonjour ${nomduclient}</h3>
+            <div style="width: 100%;height: 100px;background-color: rgb(44, 61, 78);  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                <h1 style="color:azure;position:relative;top:25%;padding-left: 2rem">Commande rejetée</h1>
+            </div>
+            <div style="background:azure;padding: 2rem">
+                <div>
+                    <p>Commande numéro : ${}</p>
+                </div>
+                <div>
+                    <p>Nous sommes au regret de ne pas pouvoir donner suite à votre commande.
+                    </p>
+                    <p>Merci, L'équipe de Zappo</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="background-color:rgba(193, 56, 50,1);text-align: center;width: 80%;margin: auto;color: azure;margin-top: 3rem">
+
+                <small>Pour les questions relatives aux plats ou au paiement, vous pouvez appeler Zappo, 6 Rue Challemel Lacour,
+                    69007 Lyon au 04 72 71 79 88.</small>
+                <br/>
+                <small> Votre numéro de commande Zappo est ${numerocommande}. Zappo, 6 Rue Challemel Lacour, 69007 Lyon </small>
+                <br/>
+                <small>© 2018 Zappo</small>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

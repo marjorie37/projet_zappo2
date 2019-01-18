@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+        .col
+            .row.justify-content-start
+              h1.bleuZappoCl
+                i.mr-3.fas.fa-piggy-bank
+                span.text-center Nouvelle promotion
+            ul#pills-tab.nav.mb-3.mt-3.justify-content-around(role='tablist')
+                    each cat in category
+                        li.nav-item
+                            a.nav-link.text-uppercase.font-weight-bold.text-dark.border-bottom.border-dark(class=`${cat.name === "Pizze" ? "active" : ""}` ,id=`pills-${cat.name}-tab`, data-toggle='pill', href=`#pills-${cat.name}`, role='tab', aria-controls=`pills-${cat.name}`)=cat.name
+            .row.pr-2.pl-2.justify-content-center
+                .tailleFix
+                    #pills-tabContent.tab-content
+                        each cat in category
+                            a.tab-pane.fade(class=`${cat.name === "Pizze" ? "active show" : ""}`, id=`pills-${cat.name}`, role='tabpanel', aria-labelledby=`pills-${cat.name}-tab`)
+                                each product in cat.products
+                                    label.m-1.btn.btnPromo.promo(for=`input${product.name}`, class=`pills-${cat.name}`)=product.name
+                                        input(id=`input${product.name}`, type='checkbox', value=product.name, name='checkDiscounts',class="checkboxhidden")                                        
+            form(method="POST", action="/admin/promotions/create")    
+                .row.border-top.border-dark.bg-light.boxShadowB.justify-content-center.p-3
+                    .col-lg-7
+                        .row
+                            h3.mb-3 Produits concernés
+                            h5.mb-3 (cliquez sur les produits pour les ajouter / les retirer de la promotion)
+                        #showPromo.row
+                    .col-lg-4.offset-lg-1
+                        .row.justify-content-center
+                            p#messageValidator
+                        .form-group
+                            label(for='inputNameDiscount') Nom
+                            input#inputNameDiscount.form-control(name="name", type='text', aria-describedby='nameHelp', placeholder='Nom de la promotion' required)
+                        .form-group
+                            label(for='inputCodeDiscount') Code
+                            input#inputCodeDiscount.form-control(name="code", type='text', aria-describedby='nameHelp', placeholder='Code promo', required)
+                        .form-group
+                            label(for='inputPercentageDiscount') Pourcentage
+                            input#inputPercentageDiscount.form-control(name="percentage", type='text', aria-describedby='nameHelp', placeholder='Exemple : 10', required)
+                        .form-group
+                            label(for='name') Date de fin de la promotion
+                            #datetimepicker8.input-group.date(data-target-input='nearest')
+                                input.form-control.datetimepicker-input(type='text', data-target='#datetimepicker8', name="endAt",required)
+                                .input-group-append(data-target='#datetimepicker8', data-toggle='datetimepicker')
+                                    .input-group-text
+                                        i.far.fa-calendar-alt
+                        button.btn.btnZappoBleu.mb-3.mt-2 Ajouter la promotion
+block javascripts
+    script(src="/js/lib.js")
+    script(src='/js/dateTimePicker.js')

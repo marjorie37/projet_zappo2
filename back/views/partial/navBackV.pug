@@ -1,0 +1,17 @@
+mixin navItem(ico,fr,en,uri)
+  li
+    a(href=uri)
+      span.zappoMenuV-icon
+        i(class=`${ico}`)
+      .zappoMenuV-content
+        h4.zappoMenuV-main=fr 
+        h6.zappoMenuV-sub=en
+
+ul.zappoMenuV
+  .d-flex.logoZappo(style="min-height:150px")
+  +navItem("far fa-clipboard","Tableau de bord", "Dashboard",'/admin/dashboard')
+  +navItem("fas fa-utensils","Produits", "Products",'/admin/produits')
+  +navItem("fas fa-chart-line","Statistiques", "Statistics",'/admin/statistiques')
+  +navItem("fas fa-piggy-bank","Promotions", "Discounts",'/admin/promotions')
+  +navItem("far fa-user","Employés", "Staff",'/admin/manage')
+  +navItem("fas fa-cogs","Réglages", "Settings",'/admin/reglages')

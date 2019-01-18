@@ -1,0 +1,42 @@
+{
+  "name": "zappo",
+  "version": "1.0.0",
+  "description": "pwa",
+  "main": "index.js",
+  "proxy": "http://localhost:5000",
+  "scripts": {
+    "start": "concurrently --kill-others \"cd back && npm start\" \"cd front && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wcs",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.6.0",
+    "eslint-plugin-react": "^7.12.3",
+    "nodemon": "^1.17.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/lyon-0218-js-zappo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/lyon-0218-js-zappo/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/lyon-0218-js-zappo#readme",
+  "dependencies": {
+    "@material-ui/lab": "^1.0.0-alpha.5",
+    "bcrypt": "^3.0.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-react-app": "^3.0.6",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-import": "^2.14.0",
+    "express-socket.io-session": "^1.3.4",
+    "fbemitter": "^2.1.1",
+    "rand-token": "^0.4.0",
+    "stripe": "^6.2.1",
+    "validator": "^10.4.0"
+  }
+}

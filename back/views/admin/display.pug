@@ -1,0 +1,76 @@
+extends ../layout
+ 
+block content
+    .col
+        .row.justify-content-between.mb-4
+            h1.bleuZappoCl
+                i.mr-3.fas.fa-cogs
+                span.text-center Réglages
+        hr.borderBleuZappo
+        .row.mt-5.ml-2.mr-2
+            h5.h4.mt-1.mb-3 Horaires d'ouverture de la vente à emporter
+        .table-responsive-md
+            table.table.table-striped
+                thead
+                    tr
+                        th= "Jour"
+                        th.text-center= "Début"
+                        th.text-center= "Fin"
+                        th.text-center= "Début"
+                        th.text-center= "Fin"
+                        th.text-center= "Midi"
+                        th.text-center= "Soir"
+                        th.text-center= "Modifier"
+                tbody 
+                each resultat in resultats
+                    tr
+                        th= resultat.day
+                            td.text-center= resultat.lunch_start_time
+                            td.text-center= resultat.lunch_end_time
+                            td.text-center= resultat.dinner_start_time
+                            td.text-center= resultat.dinner_end_time
+                            td.text-center
+                                .form-group
+                                    input(onclick=`window.location.href='/admin/reglages/update/shift_lunch/${resultat.id}'`,id=`check-shift_lunch${resultat.id}`, type='checkbox', name='shift_lunch', value=1, checked=resultat.shift_lunch ? true : false)
+                                    label(for=`check-shift_lunch${resultat.id}`)
+                            td.text-center
+                                .form-group
+                                    input(onclick=`window.location.href='/admin/reglages/update/shift_dinner/${resultat.id}'`, id=`check-shift_dinner${resultat.id}`, type='checkbox', name=`shift_dinner${resultat.id}`, value=1, checked=resultat.shift_dinner ? true : false)
+                                    label.mr-2(for=`check-shift_dinner${resultat.id}`)
+                            td.text-center
+                                a(href=`/admin/reglages/modifier/${resultat.id}`)
+                                    button.btn.btnZappoBleuEdit
+                                        i.far.fa-edit
+                                        p Editer
+        .row.justify-content-between.ml-2.mr-2.mt-5
+            h5.h4.mt-1.mb-3="Fermetures"
+            a(href="/admin/reglages/fermeture")
+                button.btn.btnZappoOutline
+                    i.fas.fa-plus-circle.mr-2
+                    |  Ajouter 
+        .table-responsive-md.table-striped
+            table.table
+                thead
+                    tr
+                        th= "Du"
+                        th= "Au"
+                        th.text-center= "Midi"
+                        th.text-center= "Soir"
+                tbody
+                each exception in exceptions
+                    tr
+                        th= exception.start_day
+                        th= exception.end_day
+                        th.text-center=exception.shift_lunch ? "Fermé" : "Ouvert"
+                        th.text-center=exception.shift_dinner ? "Fermé" : "Ouvert"
+                        th.text-center
+                            a(href=`/admin/reglages/modifierEx/${exception.id}`)
+                                button.btn.btnZappoBleuEdit
+                                    i.far.fa-edit
+                                    p Editer
+                        th.text-center
+                            a(href=`/admin/reglages/deleteEx/${exception.id}`)
+                                button.btn.btnZappoBleu
+                                    i.fas.fa-trash-alt.fa-lg.p-2
+                                    
+

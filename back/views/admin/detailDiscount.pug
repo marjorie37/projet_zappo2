@@ -1,0 +1,73 @@
+extends ../layout
+
+
+block content
+
+    .col
+        .row.justify-content-between.mb-4
+            h1.bleuZappoCl
+                i.mr-3.fas.fa-piggy-bank
+                span.text-center Détail de la Promotion
+        hr.borderBleuZappo 
+        .row.justify-content-center
+            .col-md-8
+                .row.mt-3.mb-3.p-3.bg-light.boxShadowBL
+                    .col 
+                        .row.align-items-center
+                            .col
+                                .row.justify-content-around
+                                    h3=discounts.name
+                            .col
+                                .row.justify-content-around
+                                    h5=`- ${discounts.percentage} %`
+                            .col
+                                .row
+                                    p.m-0=`Code :`
+                                        strong.h5=` ${discounts.code}`
+                            if discounts.publish
+                                .col-1
+                                    .row.justify-content-end
+                                        i.fas.fa-check.text-success
+                        hr
+                        .row.align-items-center.mb-5
+                            .col.mt-2
+                                h5.mb-3 Produit concerné :
+                                p.font-weight-bold=discounts.jsonToStr
+                            if discounts.title
+                                .col-5.mt-2
+                                    h5.mb-3 Message envoyé :
+                                    h3.text-center=discounts.title
+                                    p.text-center=discounts.description
+                        .row.align-items-center
+                            .col
+                                p=`Valide jusqu'au ${discounts.endAt}`
+                            .col
+                                .row
+                                    .col
+                                        a(href="#") 
+                                            button.btn.btnZappoBleu.mr-2(data-toggle="modal" data-target="#modalPublish")
+                                                i.fas.fa-share-square
+                                        small Publier
+                                    #modalPublish.modal.fade(tabindex='-1', role='dialog', aria-labelledby='mySmallModalLabel', aria-hidden='true',focus='true')
+                                        .modal-dialog.modal-dialog-centered.modal-sm
+                                            .modal-content.p-3
+                                                .row
+                                                    .col.text-center
+                                                        h3.mt-2.bleuZappoBg.text-light Confirmer
+                                                        p.mt-3.mb-3 Êtes-vous sûr de vouloir publier cette promotion sur l'application ?
+                                                .row
+                                                    .col-6.text-left
+                                                        button.btn.btn-danger.m-2(data-dismiss="modal") Annuler
+                                                    .col-6.text-right
+                                                        button.btn.btn-success.m-2(type="submit") Publier
+                                    .col
+                                        if !discounts.title
+                                            a(href=`/admin/promotions/publier/${discounts.id}`)
+                                                button.btn.btnZappoBleu.mr-2
+                                                    i.far.fa-envelope
+                                            small Envoyer
+                                        else
+                                            a(href=`#`)
+                                                button.btn.btnZappoBleu.mr-2.disabled
+                                                    i.far.fa-envelope
+                                            small Envoyer

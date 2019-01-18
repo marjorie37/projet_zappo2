@@ -1,0 +1,84 @@
+/*//////////////////////////////////////////////////
+//               header of the page               // 
+//////////////////////////////////////////////////*/
+
+/*//////////////////////////////////////////////////
+//                      LAYOUT                    // 
+//////////////////////////////////////////////////*/
+#shoppingCartPage #pageContent {
+  /* 7 rem padding to prevent overlap of the header */
+  margin-top: 12rem;
+}
+
+#shoppingCartPage header {
+  /* height: 120px; */
+  background-color: var(--main-blueGrey-color);
+}
+
+/*//////////////////////////////////////////////////
+//                   Typography                   // 
+//////////////////////////////////////////////////*/
+.euroSymbol {
+  color:#919191;
+}
+.productInTable {
+  font-size:1.2rem;
+  line-height:auto;
+}
+/*//////////////////////////////////////////////////
+//                     Table                      // 
+//////////////////////////////////////////////////*/
+#shoppingCartPage .table {
+  line-height: 1rem;
+  font-size: 0.9rem;
+}
+#shoppingCartPage .table td {
+  padding: 0.5rem 0 0.5rem 0;
+}
+#shoppingCartPage .table thead td {
+  font-size: 1.3rem;
+}
+#shoppingCartPage .table thead th {
+  font-weight:normal;
+}
+#shoppingCartPage .table .noTopBorder {
+  border-top: none;
+}
+
+#shoppingCartPage .table td {
+  border-top-style: dotted;
+}
+#shoppingCartPage .price {
+  border-top-style: dotted;
+}
+
+
+/*//////////////////////////////////////////////////
+//                  Media Queries                 // 
+//////////////////////////////////////////////////*/
+
+/* Mandatory to display properly the pageContent
+section because of the fixed-top property of
+the header */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #shoppingCartPage #pageContent {
+    margin-top: 20rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #shoppingCartPage #pageContent {
+    margin-top: 13rem;
+  }
+}

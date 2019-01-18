@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+    .col
+        .row.justify-content-between.mb-4
+            h1.bleuZappoCl
+                i.mr-3.far.fa-clock
+                span.text-center Ajouter Fermeture
+        .row.justify-content-center.mt-5
+            .col-md-8.bg-light.boxShadowB
+                form(method='POST', action=`/admin/reglages/enregistrerEx/${timing.id}`)
+                    .row.justify-content-around.mt-5
+                        .col
+                            .row.justify-content-center.mt-4
+                                .col-2
+                                    h5 Du
+                                .col-6
+                                    #datetimepicker5.input-group.date(data-target-input='nearest')
+                                        input.form-control.datetimepicker-input( type='text', data-target='#datetimepicker5', value=timing.start_day, name="start_day")
+                                        .input-group-append(data-target='#datetimepicker5', data-toggle='datetimepicker')
+                                            .input-group-text
+                                                i.far.fa-calendar-alt
+                            .row.justify-content-center.mt-4
+                                .col-2
+                                    h5 Au
+                                .col-6
+                                    #datetimepicker6.input-group.date(data-target-input='nearest')
+                                        input.form-control.datetimepicker-input(type='text', data-target='#datetimepicker6',value=timing.end_day, name="end_day")
+                                        .input-group-append(data-target='#datetimepicker6', data-toggle='datetimepicker')
+                                            .input-group-text
+                                                i.far.fa-calendar-alt
+                            .row.justify-content-center.mt-4
+                                .col-8
+                                    .row.justify-content-center.mt-4
+                                        h5 Fermeture
+                                    .row.justify-content-around.mt-4
+                                        .form-group
+                                            input(id=`check-shift_lunch`, type='checkbox', value=1, name='shift_lunch', checked=timing.shift_lunch)
+                                            label(for=`check-shift_lunch`) Midi
+                                        .form-group
+                                            input(id=`check-shift_dinner`, type='checkbox' value=1,name='shift_dinner', checked=timing.shift_dinner)
+                                            label(for=`check-shift_dinner`) Soir
+                    .row.justify-content-center.mt-4.mb-5
+                        button.btn.btnZappoBleu(type="submit") Modifier
+block javascripts
+    script(src='/js/dateTimePicker.js')

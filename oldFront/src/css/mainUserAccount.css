@@ -1,0 +1,160 @@
+/*///////////////////////////////////////////////////////////////////////
+// CSS commun à toutes les pages html concernant le compte utilisateur//
+///////////////////////////////////////////////////////////////////////*/
+/*
+COULEURS ET POLICES
+colors :
+red : #c0392b;
+dark blue : #2c3e50
+light grey : #e8e8e8
+blue :#009ee0
+polices :
+  titres: BERNARDO MODA BOLD
+  textes: ROBOTO
+  Icones: METERIAL DESIGN ICONIC FONT
+*/
+@font-face {
+  font-family: "BERNARDO MODA BOLD";
+  src: url("/fonts/BernardoModaBold.ttf");
+}
+
+/*////////////////////////////////////
+//              top                 //
+////////////////////////////////////*/
+
+.title {
+  padding-top: 1%;
+}
+.title h1 {
+  font-family: "BERNARDO MODA BOLD", Arial, sans-serif;
+  font-size: 1.7em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.title p {
+  white-space: nowrap;
+}
+
+/*////////////////////////////////////////
+// inputs and buttons                   //
+////////////////////////////////////////*/
+
+.userRegister input,
+button {
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+.userModify input,
+button {
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+.userPasswordReset input[type="email"],
+button {
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+.lostPassword input[type="email"],
+button {
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+.userLogin input[type="email"],
+input[type="password"],
+button {
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+.btnLogin,
+.btnLostPassword,
+.btnPasswordReset,
+.btnRegister,
+.btnLogin,
+.btnModify {
+  font-size: 1.3em;
+}
+
+/*///////////////////////////////////////////////
+// texts and links                             //
+///////////////////////////////////////////////*/
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.userLogin .zappo-text-primary {
+  font-size: 1.5em;
+}
+
+.creation a,
+.directOrder a {
+  background-color: #e8e8e8;
+}
+.creation h4,
+.directOrder h4 {
+  font-size: 1em;
+}
+.lostPassword h4 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.passwordEmailSent h4 {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.userPasswordReset h4 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.userRegister h4 {
+  font-size: 1.5em;
+}
+
+.userLogin h4 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.accountDeleted h4 {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.userModify h4 {
+  font-size: 1.5em;
+}
+
+/*////////////////////////////////////////
+// symbols                              //
+////////////////////////////////////////*/
+.lostPassword .zmdi-hc-4x {
+  color: #2c3e50;
+}
+
+.passwordEmailSent .zmdi-hc-4x {
+  color: #2c3e50;
+}
+.passwordReset .zmdi-hc-4x {
+  color: #2c3e50;
+}
+
+.accountDeleted .zmdi-hc-5x {
+  color: #c0392b;
+}
+
+/*/////////////////////////////////
+// Navs                         //
+////////////////////////////////*/
+
+.nav-link.active {
+  text-decoration: underline #2c3e50;
+  color: #2c3e50;
+}

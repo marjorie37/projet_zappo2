@@ -1,0 +1,74 @@
+extends ../layout
+
+
+block css
+    link(href='/stylesheets/switch.css', rel='stylesheet')
+
+block content
+    .col
+      .row.justify-content-between.mb-4
+        h1.bleuZappoCl
+          i.mr-3.fas.fa-utensils
+          span.text-center Produits
+        a(href='/admin/produits/ajouter' role="button") 
+          .btn.btnZappoOutline
+            |  Ajouter
+            i.fas.fa-plus-circle.ml-2
+      hr.borderBleuZappo
+      nav.nav.justify-content-around
+        li.nav-item
+          a.nav-link.text-uppercase.btnZappoOutlineProduct(href='/admin/produits/categorie/2')
+            strong
+              ='Entrées'
+        li.nav-item
+          a.nav-link.text-uppercase.btnZappoOutlineProduct(href='/admin/produits/categorie/1')
+            strong
+              ='Pizze'
+        li.nav-item
+          a.nav-link.text-uppercase.btnZappoOutlineProduct(href='/admin/produits/categorie/3')
+            strong
+              ='Desserts'
+        li.nav-item
+          a.nav-link.text-uppercase.btnZappoOutlineProduct(href='/admin/produits/categorie/4')
+            strong
+              ='Boissons'
+      .table-responsive-md
+        table.table.mt-3
+          thead
+            tr
+              th(scope='col') Nom
+              th.text-center(scope='col') Prix HT
+              th.text-center(scope='col') Etat
+              th.text-center(scope='col') Contrôles
+          tbody 
+            each category,index in results
+              tr
+                td.text-muted
+                  strong.h5.text-primary=index
+              each product in category
+                tr
+                  td
+                    strong
+                      =product.name
+                  td
+                    .text-center
+                      =`${product.ht_price} €`
+                  td.text-center
+                    if product.state
+                        label.switch
+                          a(href=`/admin/produits/toggle-visibility/${product.id}`)
+                            input(type='checkbox' checked)
+                            span.slider.round
+                    else
+                        label.switch
+                          a(href=`/admin/produits/toggle-visibility/${product.id}`)
+                            input(type='checkbox')
+                            span.slider.round
+                  td.text-center
+                    .btn-group(role="group" aria-label="Contrôles")
+                      a(href=`/admin/produits/editer/${product.id}`)
+                        button.btn.btnZappoBleuEdit
+                          i.far.fa-edit
+                          p Editer
+                  
+
