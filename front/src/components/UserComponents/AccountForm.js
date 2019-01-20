@@ -102,8 +102,6 @@ class AccountForm extends Component {
       touched
     } = this.state;
 
-    console.log(this.props.redirectTo());
-
     // validations part of the component. With a condition named "noValidate" so we have different
     // validators for the login and signin parts
     let errorName = "";

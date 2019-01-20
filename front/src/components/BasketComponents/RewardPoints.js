@@ -32,17 +32,19 @@ class RewardPoints extends Component {
     }
   }
   render() {
+    const {theme} = this.props;
+    const {points} = this.state;
     return (
       <StyledReward>
         <Typography
           variant="body1"
           component="p"
-          style={this.props.theme.infoColor}
+          style={theme.infoColor}
         >
-          [ + {this.state.points} points de fidélité
-          {this.state.points >= 8
+          [ + {points} points de fidélité
+          {points >= 8
             ? "  \u{1F60A}"
-            : [...Array(this.state.points)].map((point, index) => (
+            : [...Array(points)].map((point, index) => (
               <span key={ "starX" + index}>
                   <Star
                     style={{

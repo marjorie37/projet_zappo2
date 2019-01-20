@@ -8,59 +8,51 @@ class FooterPrice extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalTTC: 0,
-      tvaTen: 0,
-      tvaTwenty: 0,
-      totalHT: 0
+     
     };
-    this.getHT = this.getHT.bind(this);
-    this.getHTPercent = this.getHTPercent.bind(this);
-    this.getTotalTTC = this.getTotalTTC.bind(this);
-    this.redirectTo = this.redirectTo.bind(this);
-    this.getTotalHT = this.getTotalHT.bind(this);
   }
 
   componentDidUpdate() {
-    localStorage.setItem("TTC", this.getTotalTTC());
-    localStorage.setItem("HT", this.getTotalHT());
+    localStorage.setItem("TTC", this.getTotal());
+    localStorage.setItem("HT", this.getTotalNoVat());
   }
 
-  getHT() {
-    const sommes = this.props.products.map(
+  totalNoVat() {
+    const sums = this.props.products.map(
       product => product.ht_price * product.quantity
     );
-    const total = sommes.reduce((acc, current) => {
+    const total = sums.reduce((acc, current) => {
       return acc + current;
     }, 0);
 
     return Math.round(total * 100) / 100;
   }
 
-  getHTPercent(tva = 10) {
-    const sommes = this.props.products
-      .filter(product => product.tva === tva)
-      .map(product => product.ht_price * product.quantity * (tva / 100));
-    const total = sommes.reduce((acc, current) => {
+  noVatPercent(vat = 10) {
+    const sums = this.props.products
+      .filter(product => product.tva === vat)
+      .map(product => product.ht_price * product.quantity * (vat / 100));
+    const total = sums.reduce((acc, current) => {
       return acc + current;
     }, 0);
 
     return Math.round(total * 100) / 100;
   }
 
-  getTotalTTC() {
-    const sommes = this.props.products.reduce(
+  getTotal() {
+    const sums = this.props.products.reduce(
       (ac, product) => ac + product.ttc_price * product.quantity,
       0
     );
-    return sommes.toFixed(2);
+    return sums.toFixed(2);
   }
 
-  getTotalHT() {
-    const sommes = this.props.products.reduce(
+  getTotalNoVat() {
+    const sums = this.props.products.reduce(
       (ac, product) => ac + product.ht_price * product.quantity,
       0
     );
-    return sommes.toFixed(2);
+    return sums.toFixed(2);
   }
 
   redirectTo() {
@@ -77,7 +69,7 @@ class FooterPrice extends Component {
     return (
       <StyledFooterPrice>
         <div>
-          <Button variant="fab" color="secondary" onClick={this.redirectTo}>
+          <Button variant="fab" color="secondary" onClick={() => this.redirectTo()}>
             <Payment />
           </Button>
         </div>
@@ -103,7 +95,7 @@ class FooterPrice extends Component {
                 align="right"
                 style={{ color: "#fff" }}
               >
-                {products.length > 0 && this.getTotalTTC()} €
+                {products.length > 0 && this.getTotal()} €
               </Typography>
             </Grid>
           </Grid>
@@ -127,7 +119,7 @@ class FooterPrice extends Component {
                 align="right"
                 style={{ color: "#fff" }}
               >
-                {products.length > 0 && this.getHTPercent(10)}
+                {products.length > 0 && this.noVatPercent(10)}
               </Typography>
             </Grid>
           </Grid>
@@ -151,7 +143,7 @@ class FooterPrice extends Component {
                 align="right"
                 style={{ color: "#fff" }}
               >
-                {products.length > 0 && this.getHTPercent(20)}
+                {products.length > 0 && this.noVatPercent(20)}
               </Typography>
             </Grid>
           </Grid>
@@ -174,7 +166,7 @@ class FooterPrice extends Component {
                 align="right"
                 style={{ color: "#fff" }}
               >
-                {products.length > 0 && this.getHT()}
+                {products.length > 0 && this.totalNoVat()}
               </Typography>
             </Grid>
           </Grid>

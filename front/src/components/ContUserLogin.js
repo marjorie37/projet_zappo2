@@ -19,6 +19,7 @@ class ContUserLogin extends Component {
 
   render() {
     const { history, location } = this.props;
+    
     return (
       <RootContainer>
         <MainHeader

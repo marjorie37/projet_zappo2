@@ -22,7 +22,6 @@ import {
 } from "../styled/StyledTimePicker";
 
 const lunchTime = (today, delay, bool) => {
-	console.log("t", today);
 	if (today) {
 		return timeToRangeWithInterval(
 			today.lunch_start_time,
@@ -60,11 +59,11 @@ class ContBasket extends Component {
 		};
 		this.restoreCart = this.restoreCart.bind(this);
 		this.action = this.action.bind(this);
-		this.handleDateChange = this.handleDateChange.bind(this);
-		this.disableDays = this.disableDays.bind(this);
-		this.handleTimeChange = this.handleTimeChange.bind(this);
+		//this.handleDateChange = this.handleDateChange.bind(this);
+	//	this.disableDays = this.disableDays.bind(this);
+	//	this.handleTimeChange = this.handleTimeChange.bind(this);
 		this.emitter = Emitter;
-		this.checkTimeMessage = this.checkTimeMessage.bind(this);
+	//	this.checkTimeMessage = this.checkTimeMessage.bind(this);
 	}
 
 	restoreCart() {
@@ -209,9 +208,9 @@ class ContBasket extends Component {
 			time,
 			maxDate,
 			products,
-			delay
+			delay,
+			message
 		} = this.state;
-		console.log("delay", delay);
 		const { shift_lunch, shift_dinner } = today;
 		const { history } = this.props;
 		const now = moment();
@@ -219,8 +218,7 @@ class ContBasket extends Component {
 		const delivery = bool ? now.add(delay, "minutes") : now;
 
 		const lunch = lunchTime(today).filter(
-			el => console.log(moment(el, ["LT"]), delivery.format("LT"))
-			//    moment(el, ["LT"]).isAfter(delivery, ["LT"])
+			el => moment(el, ["LT"]).isAfter(delivery, ["LT"])
 		);
 		const dinner = dinnerTime(today).filter(el =>
 			moment(el, ["LT"]).isAfter(delivery, ["LT"])
@@ -251,10 +249,10 @@ class ContBasket extends Component {
 										value={selectedDate}
 										ampm="false"
 										disablePast={true}
-										onChange={this.handleDateChange}
+										onChange={() => this.handleDateChange()}
 										format="Do MMM"
 										maxDate={maxDate.format("YYYY-MM-DD")}
-										shouldDisableDate={this.disableDays}
+										shouldDisableDate={() => this.disableDays()}
 										onOpen={() => this.setState({ timeOpen: false })}
 										style={{
 											width: "60px",
@@ -290,12 +288,12 @@ class ContBasket extends Component {
 				/>
 				<BasketProductsList
 					action={this.action}
-					products={this.state.products}
+					products={products}
 				/>
-				{this.state.products.length > 0 && (
+				{products.length > 0 && (
 					<FooterPrice
-						products={this.state.products}
-						checkMessage={this.checkTimeMessage}
+						products={products}
+						checkMessage={() => this.checkTimeMessage()}
 						time={time}
 						{...this.props}
 					/>
@@ -360,14 +358,14 @@ class ContBasket extends Component {
 					)}
 				</StyledTimeContainer>
 				<Snackbar
-					open={this.state.message !== null ? true : false}
+					open={message !== null ? true : false}
 					autoHideDuration={3000}
 					onClose={() => this.setState({ message: null })}
 					TransitionComponent={Fade}
 					ContentProps={{
 						"aria-describedby": "message-id"
 					}}
-					message={<span id="message-id">{this.state.message}</span>}
+					message={<span id="message-id">{message}</span>}
 				/>
 			</RootContainer>
 		);

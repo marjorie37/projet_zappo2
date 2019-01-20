@@ -13,6 +13,7 @@ class BasketProductsList extends Component {
   }
 
   render() {
+    const {products, action} = this.props;
     return (
       <List
         style={{
@@ -23,16 +24,16 @@ class BasketProductsList extends Component {
           overflowX: "hidden"
         }}
       >
-        {this.props.products.length > 0 && (
+        {products.length > 0 && (
           <StyledListItem>
             <RewardPoints />
           </StyledListItem>
         )}
-        {this.props.products.length ? (
-          this.props.products.map((product, key) => (
+        {products.length ? (
+          products.map((product, key) => (
             <BasketProducts
               key={product.name + key}
-              action={this.props.action}
+              action={action}
               product={product}
             />
           ))

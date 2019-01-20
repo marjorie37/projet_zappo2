@@ -25,7 +25,7 @@
   "homepage": "https://github.com/WildCodeSchool/lyon-0218-js-zappo#readme",
   "dependencies": {
     "@material-ui/lab": "^1.0.0-alpha.5",
-    "bcrypt": "^3.0.0",
+    "bcrypt": "^3.0.3",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
