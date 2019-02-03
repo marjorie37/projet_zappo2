@@ -43,12 +43,17 @@ class User extends Component {
       )
     ).then(res => {
       const { success, error, token } = res.data;
+      const { prevPath, history } = this.props;
       if (success) {
         localStorage.setItem("ZappoToken", token);
-        console.log(localStorage);
+        if (prevPath !== null && prevPath === "/mon-panier") {
+          history.push("/paiement");
+        } else {
+          history.push("/");
+        }
       }
       if (error) {
-        this.setState({ message: "Cette adresse email existe déjà" });
+        this.setState({ message: error });
       }
     });
   }

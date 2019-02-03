@@ -86,7 +86,7 @@ class AccountForm extends Component {
     const {
       classes,
       formType,
-      onSubmit,
+      // onSubmit,
       onBlurCheck,
       message,
       onOpenSnack,
@@ -101,7 +101,6 @@ class AccountForm extends Component {
       inputConfirmPassword,
       touched
     } = this.state;
-
     // validations part of the component. With a condition named "noValidate" so we have different
     // validators for the login and signin parts
     let errorName = "";
@@ -367,5 +366,6 @@ class AccountForm extends Component {
     );
   }
 }
+
 
 export default withStyles(styles)(AccountForm);

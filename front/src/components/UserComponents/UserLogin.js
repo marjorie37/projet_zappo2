@@ -19,7 +19,6 @@ class UserLogin extends Component {
   }
 
   handleSubmit(params) {
-    const { prevPath } = this.props;
     axios(
       config(
         {

@@ -35,6 +35,7 @@
     "eslint-plugin-import": "^2.14.0",
     "express-socket.io-session": "^1.3.4",
     "fbemitter": "^2.1.1",
+    "prop-types": "^15.6.2",
     "rand-token": "^0.4.0",
     "stripe": "^6.2.1",
     "validator": "^10.4.0"
